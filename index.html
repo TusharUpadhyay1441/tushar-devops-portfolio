@@ -1,274 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tushar Upadhyay Portfolio</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-  /* General Styles */
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0f172a;
-    color: white;
-    overflow-x: hidden;
-    cursor: none;
-  }
-  header {
-    text-align: center;
-    padding: 100px 20px 50px;
-  }
-  header h1 {
-    font-size: 3em;
-    margin: 0;
-  }
-  header h2 {
-    font-size: 1.5em;
-    color: #60a5fa;
-    min-height: 30px;
-  }
+    body {
+      font-family: "Poppins", sans-serif;
+      color: white;
+      scroll-behavior: smooth;
+    }
 
-  /* Navbar */
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #111827;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 15px 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  }
-  nav button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  nav button:hover {
-    color: #60a5fa;
-  }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      z-index: 1000;
+    }
 
-  /* Sections */
-  section {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 0 20px;
-    background: #111827;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(88,166,255,0.2);
-    overflow: hidden;
-    height: 0;
-    opacity: 0;
-    transition: all 0.6s ease;
-  }
-  section.show {
-    height: auto;
-    opacity: 1;
-    padding: 20px;
-  }
-  section h3 {
-    color: #60a5fa;
-    margin-top: 0;
-  }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
 
-  /* Skills */
-  .skill {
-    margin: 15px 0;
-  }
-  .skill-name {
-    margin-bottom: 5px;
-  }
-  .progress {
-    background: #1e293b;
-    height: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .progress-bar {
-    height: 100%;
-    width: 0;
-    background: #60a5fa;
-    border-radius: 10px;
-    transition: width 1s ease;
-  }
+    nav a:hover {
+      color: #ff4757;
+    }
 
-  /* Contact icons */
-  .contact a {
-    margin-right: 15px;
-    color: white;
-    font-size: 1.5em;
-    transition: 0.3s;
-  }
-  .contact a:hover {
-    color: #60a5fa;
-  }
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
 
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-    color: #94a3b8;
-  }
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
 
-  /* Cursor */
-  .cursor-dot {
-    position: fixed;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    pointer-events: none;
-    mix-blend-mode: difference;
-    transition: transform 0.1s ease-out;
-    z-index: 9999;
-  }
-  .cursor-dot.white {
-    background: white;
-    width: 12px;
-    height: 12px;
-  }
-  .cursor-dot.red {
-    background: red;
-    width: 8px;
-    height: 8px;
-    animation: blink 1s infinite;
-  }
-  @keyframes blink {
-    0%,50%,100% { opacity: 1; }
-    25%,75% { opacity: 0; }
-  }
-</style>
+    section > div {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1, h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    /* Typing effect */
+    .typing {
+      font-size: 1.5rem;
+      color: #ff4757;
+      border-right: 2px solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { background: white; }
+      51%, 100% { background: red; }
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .skill {
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .skill:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #ff4757;
+    }
+
+    /* Contact */
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 2rem;
+    }
+
+    .contact-icons a {
+      color: white;
+      transition: color 0.3s;
+    }
+
+    .contact-icons a:hover {
+      color: #ff4757;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer .icons {
+      margin-top: 10px;
+      font-size: 1.5rem;
+    }
+
+    footer .icons a {
+      color: white;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    footer .icons a:hover {
+      color: #ff4757;
+    }
+  </style>
 </head>
 <body>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<!-- Cursor -->
-<div class="cursor-dot white"></div>
-<div class="cursor-dot red"></div>
+  <section id="home" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475');">
+    <div>
+      <h1>Hello, I'm Tushar</h1>
+      <div class="typing" id="typing"></div><span class="cursor"></span>
+    </div>
+  </section>
 
-<!-- Navbar -->
-<nav>
-  <button data-target="about">About Me</button>
-  <button data-target="skills">Skills</button>
-  <button data-target="contact">Contact</button>
-</nav>
+  <section id="about" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');">
+    <div>
+      <h2>About Me</h2>
+      <p>I am a passionate DevOps enthusiast exploring cloud computing, automation, and system design.</p>
+    </div>
+  </section>
 
-<!-- Header -->
-<header>
-  <h1>Tushar Upadhyay</h1>
-  <h2 id="typing"></h2>
-</header>
+  <section id="skills" style="background-image: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb');">
+    <div>
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">AWS</div>
+        <div class="skill">Docker</div>
+        <div class="skill">Kubernetes</div>
+        <div class="skill">Jenkins</div>
+        <div class="skill">Terraform</div>
+        <div class="skill">Linux</div>
+        <div class="skill">Git & GitHub</div>
+        <div class="skill">CI/CD</div>
+      </div>
+    </div>
+  </section>
 
-<!-- Sections -->
-<section id="about">
-  <h3>About Me</h3>
-  <p>Hi! I'm Tushar, a DevOps Enthusiast, Cloud Learner, and Automation Explorer. I love building scalable cloud projects and exploring new technologies.</p>
-</section>
+  <section id="contact" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');">
+    <div>
+      <h2>Contact Me</h2>
+      <div class="contact-icons">
+        <a href="mailto:your@email.com"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/yourusername" target="_blank"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </section>
 
-<section id="skills">
-  <h3>Skills</h3>
-  <div class="skill">
-    <div class="skill-name">AWS</div>
-    <div class="progress"><div class="progress-bar" data-level="80%"></div></div>
-  </div>
-  <div class="skill">
-    <div class="skill-name">Java</div>
-    <div class="progress"><div class="progress-bar" data-level="70%"></div></div>
-  </div>
-  <div class="skill">
-    <div class="skill-name">Linux</div>
-    <div class="progress"><div class="progress-bar" data-level="75%"></div></div>
-  </div>
-</section>
+  <footer>
+    <p>&copy; 2025 Tushar. All Rights Reserved.</p>
+    <div class="icons">
+      <a href="mailto:your@email.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/yourusername" target="_blank"><i class="fa-brands fa-github"></i></a>
+    </div>
+  </footer>
 
-<section id="contact">
-  <h3>Contact Me</h3>
-  <div class="contact">
-    <a href="mailto:example@email.com"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github"></i></a>
-  </div>
-</section>
+  <script>
+    const typingElement = document.getElementById("typing");
+    const texts = ["DevOps Enthusiast", "Cloud Learner", "Automation Explorer"];
+    let i = 0, j = 0, currentText = "", isDeleting = false;
 
-<footer>
-  &copy; 2025 Tushar Upadhyay. All rights reserved.
-</footer>
+    function type() {
+      currentText = texts[i];
+      typingElement.textContent = isDeleting
+        ? currentText.substring(0, j--)
+        : currentText.substring(0, j++);
 
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" crossorigin="anonymous"></script>
-<script>
-  // Typing effect
-  const text = ["DevOps Enthusiast", "Cloud Learner", "Automation Explorer"];
-  let idx = 0, charIdx = 0;
-  const typingElement = document.getElementById("typing");
-
-  function type() {
-    if(charIdx < text[idx].length){
-      typingElement.textContent += text[idx][charIdx];
-      charIdx++;
-      setTimeout(type, 100);
-    } else {
-      setTimeout(erase, 1000);
-    }
-  }
-  function erase() {
-    if(charIdx > 0){
-      typingElement.textContent = text[idx].substring(0, charIdx-1);
-      charIdx--;
-      setTimeout(erase, 50);
-    } else {
-      idx = (idx + 1) % text.length;
-      setTimeout(type, 500);
-    }
-  }
-  type();
-
-  // Slide-down sections
-  const buttons = document.querySelectorAll("nav button");
-  const sections = document.querySelectorAll("section");
-
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      sections.forEach(sec => sec.classList.remove("show"));
-      const target = document.getElementById(btn.dataset.target);
-      setTimeout(() => target.classList.add("show"), 100);
-      target.scrollIntoView({behavior: "smooth"});
-
-      if(btn.dataset.target === "skills") {
-        document.querySelectorAll(".progress-bar").forEach(bar => {
-          bar.style.width = bar.dataset.level;
-        });
+      if (!isDeleting && j === currentText.length + 1) {
+        isDeleting = true;
+        setTimeout(type, 1000);
+      } else if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % texts.length;
+        setTimeout(type, 200);
+      } else {
+        setTimeout(type, isDeleting ? 50 : 100);
       }
-    });
-  });
-
-  // Red + White cursor
-  const cursorWhite = document.querySelector(".cursor-dot.white");
-  const cursorRed = document.querySelector(".cursor-dot.red");
-  let mouseX = 0, mouseY = 0, posX = 0, posY = 0;
-
-  document.addEventListener("mousemove", e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function animateCursor(){
-    posX += (mouseX - posX) * 0.2;
-    posY += (mouseY - posY) * 0.2;
-
-    cursorWhite.style.transform = `translate3d(${posX}px, ${posY}px, 0)`;
-    cursorRed.style.transform = `translate3d(${posX}px, ${posY}px, 0)`;
-
-    requestAnimationFrame(animateCursor);
-  }
-  animateCursor();
-</script>
-
+    }
+    type();
+  </script>
 </body>
 </html>
