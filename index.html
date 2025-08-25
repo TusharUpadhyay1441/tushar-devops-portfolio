@@ -5,183 +5,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tushar Upadhyay | DevOps Portfolio</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
     body {
-      background: linear-gradient(to right, #1e1e2f, #2b5876, #4e4376);
-      color: #fff;
-      line-height: 1.6;
-      scroll-behavior: smooth;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
     }
     header {
-      text-align: center;
-      padding: 4rem 1rem;
-      background: rgba(0,0,0,0.3);
+      padding: 60px 20px;
     }
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      animation: fadeInDown 1.5s ease;
+      font-size: 2.8rem;
+      margin: 0;
+      animation: fadeInDown 2s ease;
     }
-    header p {
-      font-size: 1.2rem;
+    header h2 {
+      font-size: 1.4rem;
+      font-weight: 300;
+      margin-top: 10px;
       animation: fadeInUp 2s ease;
     }
     @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-50px);}
-      to {opacity: 1; transform: translateY(0);}
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(50px);}
-      to {opacity: 1; transform: translateY(0);}
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
     section {
-      padding: 3rem 2rem;
+      padding: 40px 20px;
       max-width: 900px;
       margin: auto;
     }
-    section h2 {
-      text-align: center;
-      margin-bottom: 2rem;
+    h2 {
       font-size: 2rem;
-      color: #ffcc70;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #00c6ff;
+      display: inline-block;
+      padding-bottom: 5px;
     }
-
     .about p {
       font-size: 1.1rem;
-      text-align: center;
-      background: rgba(255,255,255,0.1);
-      padding: 1rem;
-      border-radius: 10px;
-      animation: fadeIn 2s ease;
+      line-height: 1.6;
     }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+    .skill {
+      margin: 20px 0;
+      text-align: left;
     }
-
-    .skills .skill {
-      margin-bottom: 1.5rem;
-    }
-    .skills p {
-      margin-bottom: 0.5rem;
-    }
-    .progress-bar {
-      background: rgba(255,255,255,0.2);
-      border-radius: 20px;
-      overflow: hidden;
+    .skill p {
+      margin: 0 0 5px;
     }
     .progress {
-      height: 15px;
-      border-radius: 20px;
+      background: #333;
+      border-radius: 25px;
+      overflow: hidden;
+      height: 20px;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
       text-align: right;
-      padding-right: 5px;
-      line-height: 15px;
-      font-size: 0.8rem;
-      color: #fff;
-      animation: grow 2s ease-out;
-    }
-    @keyframes grow {
-      from {width: 0;}
-    }
-
-    .contact {
-      text-align: center;
+      padding-right: 10px;
+      line-height: 20px;
+      color: white;
+      font-size: 0.9rem;
+      transition: width 2s ease;
     }
     .contact a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.7rem 1.5rem;
-      border-radius: 25px;
-      background: #ffcc70;
-      color: #222;
+      margin: 10px;
       text-decoration: none;
+      color: #00c6ff;
       font-weight: bold;
       transition: 0.3s;
     }
     .contact a:hover {
-      background: #fff;
-      color: #222;
-      transform: scale(1.05);
+      color: #fff;
+      text-decoration: underline;
     }
-
     footer {
-      text-align: center;
-      padding: 1rem;
-      background: rgba(0,0,0,0.3);
-      margin-top: 2rem;
+      padding: 20px;
+      background: #111;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
+  <!-- Hero Section -->
   <header>
     <h1>Hi, I'm Tushar 👋</h1>
-    <p>A DevOps Enthusiast | Cloud Learner | Automation Explorer</p>
+    <h2>DevOps Enthusiast | Cloud Learner | Automation Explorer</h2>
   </header>
 
+  <!-- About Section -->
   <section class="about">
     <h2>About Me</h2>
     <p>
-      I’m a DevOps fresher with a background in Computer Applications.  
-      Currently learning AWS, Jenkins, Terraform, Ansible, Grafana, and ELK.  
-      My goal is to build scalable, automated, and reliable infrastructure 🚀.
+      I'm a DevOps fresher with a background in Computer Applications. 
+      Passionate about automation, cloud technologies, and monitoring solutions. 
+      Currently learning AWS, Jenkins, Terraform, Ansible, Grafana, and ELK Stack. 
+      My goal is to build scalable and automated infrastructure 🚀.
     </p>
   </section>
 
+  <!-- Skills Section -->
   <section class="skills">
     <h2>Skills</h2>
 
     <div class="skill">
       <p>Jenkins</p>
-      <div class="progress-bar">
-        <div class="progress" style="width: 70%; background:#f39c12;">70%</div>
-      </div>
+      <div class="progress"><div class="progress-bar" style="width: 75%;">75%</div></div>
     </div>
-
     <div class="skill">
       <p>Terraform</p>
-      <div class="progress-bar">
-        <div class="progress" style="width: 65%; background:#27ae60;">65%</div>
-      </div>
+      <div class="progress"><div class="progress-bar" style="width: 70%;">70%</div></div>
     </div>
-
     <div class="skill">
       <p>Ansible</p>
-      <div class="progress-bar">
-        <div class="progress" style="width: 60%; background:#2980b9;">60%</div>
-      </div>
+      <div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div>
     </div>
-
     <div class="skill">
       <p>Grafana</p>
-      <div class="progress-bar">
-        <div class="progress" style="width: 55%; background:#8e44ad;">55%</div>
-      </div>
+      <div class="progress"><div class="progress-bar" style="width: 65%;">65%</div></div>
     </div>
-
     <div class="skill">
       <p>ELK Stack</p>
-      <div class="progress-bar">
-        <div class="progress" style="width: 50%; background:#c0392b;">50%</div>
-      </div>
+      <div class="progress"><div class="progress-bar" style="width: 70%;">70%</div></div>
+    </div>
+    <div class="skill">
+      <p>AWS</p>
+      <div class="progress"><div class="progress-bar" style="width: 85%;">85%</div></div>
+    </div>
+    <div class="skill">
+      <p>Docker</p>
+      <div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div>
+    </div>
+    <div class="skill">
+      <p>Kubernetes</p>
+      <div class="progress"><div class="progress-bar" style="width: 70%;">70%</div></div>
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section class="contact">
     <h2>Contact Me</h2>
-    <a href="mailto:tushar@example.com">📧 Email</a>
-    <a href="https://github.com/tusharupadhyay1441" target="_blank">💻 GitHub</a>
-    <a href="https://www.linkedin.com/" target="_blank">🔗 LinkedIn</a>
+    <p>Let's connect! 🚀</p>
+    <a href="https://github.com/tusharupadhyay1441" target="_blank">GitHub</a>
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    <a href="mailto:yourmail@example.com">Email</a>
   </section>
 
   <footer>
-    <p>🚀 Automating today for a scalable tomorrow | © 2025 Tushar Upadhyay</p>
+    © 2025 Tushar Upadhyay | DevOps Portfolio
   </footer>
 
 </body>
