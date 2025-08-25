@@ -11,14 +11,18 @@
 <!-- FontAwesome -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" crossorigin="anonymous"></script>
 
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 <style>
     /* Global Styles */
     body {
         margin: 0;
         font-family: 'Poppins', sans-serif;
-        background-color: #0d1117;
+        background-color: #0b0c10;
         color: #ffffff;
         scroll-behavior: smooth;
+        overflow-x: hidden;
     }
 
     /* Navigation */
@@ -27,37 +31,49 @@
         justify-content: space-between;
         align-items: center;
         padding: 20px 50px;
-        background-color: #0d1117;
+        background-color: rgba(11, 12, 16, 0.9);
         position: fixed;
         width: 100%;
         z-index: 100;
+        backdrop-filter: blur(10px);
     }
 
     nav .logo {
-        font-size: 24px;
+        font-size: 28px;
         font-weight: bold;
-        color: #00f0ff; /* Changed color */
+        color: #00f0ff;
+        transition: color 0.3s;
+    }
+
+    nav .logo:hover {
+        color: #ff6f61;
     }
 
     nav ul {
         list-style: none;
         display: flex;
-        gap: 30px;
+        gap: 40px;
     }
 
-    nav ul li {
-        cursor: pointer;
-        transition: color 0.3s;
+    nav ul li a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 500;
+        transition: all 0.3s;
+        font-size: 18px;
     }
 
-    nav ul li:hover {
-        color: #00f0ff;
+    nav ul li a:hover {
+        color: #ff6f61;
+        transform: scale(1.1);
     }
 
     /* Sections */
     section {
-        padding: 100px 50px;
+        padding: 120px 50px;
         min-height: 100vh;
+        position: relative;
+        z-index: 2;
     }
 
     /* Home Section */
@@ -67,30 +83,31 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: linear-gradient(135deg, #1f2a44, #162447);
+        position: relative;
+        background: #0b0c10;
+        overflow: hidden;
     }
 
     #home h1 {
         font-size: 48px;
         margin: 10px 0;
-        color: #00f0ff;
+        color: #ff6f61;
         animation: glow 1.5s infinite alternate;
     }
 
     #home p {
-        font-size: 24px;
+        font-size: 22px;
         margin: 10px 0;
         color: #ffffff;
     }
 
     @keyframes glow {
-        from { text-shadow: 0 0 10px #00f0ff; }
-        to { text-shadow: 0 0 20px #00f0ff; }
+        from { text-shadow: 0 0 10px #ff6f61; }
+        to { text-shadow: 0 0 20px #ff6f61; }
     }
 
     /* About Section */
     #about {
-        background: linear-gradient(135deg, #0d1117, #1a1f2c);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -115,7 +132,7 @@
 
     .skills-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 30px;
         justify-items: center;
         align-items: center;
@@ -163,7 +180,6 @@
 
     /* Contact Section */
     #contact {
-        background: linear-gradient(135deg, #0d1117, #1a1f2c);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -173,7 +189,7 @@
     #contact h2 {
         font-size: 36px;
         margin-bottom: 20px;
-        color: #00f0ff;
+        color: #ff6f61;
     }
 
     #contact a {
@@ -185,9 +201,25 @@
     }
 
     #contact a:hover {
-        color: #ffffff;
+        color: #ff6f61;
     }
 
+    /* Spline 3D container */
+    #spline {
+        width: 100%;
+        height: 500px;
+        margin-top: 20px;
+    }
+
+    /* Particles canvas */
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
 </style>
 </head>
 <body>
@@ -205,8 +237,10 @@
 
 <!-- Home Section -->
 <section id="home" data-aos="fade-up">
+    <div id="particles-js"></div>
     <h1>DevOps Enthusiast · Cloud Learner · Automation Explorer</h1>
     <p>Welcome to my portfolio website!</p>
+    <iframe id="spline" src="https://my.spline.design/3dmodelembed/yourmodelid" frameborder="0" allowfullscreen></iframe>
 </section>
 
 <!-- About Section -->
@@ -243,6 +277,21 @@
       duration: 1200,
       once: true
   });
+</script>
+
+<!-- Particles JS -->
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 80 },
+    "color": { "value": "#00f0ff" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.5 },
+    "size": { "value": 3 },
+    "line_linked": { "enable": true, "distance": 150, "color": "#00f0ff", "opacity": 0.4, "width": 1 },
+    "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "bounce" }
+  }
+});
 </script>
 
 </body>
