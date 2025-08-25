@@ -35,13 +35,55 @@
     #about h2 { color: #00ffea; font-size: 2.5rem; margin-bottom: 20px; }
     #about p { max-width: 700px; color: #ccc; line-height: 1.6; }
 
-    /* Skills Section */
-    #skills { background: linear-gradient(135deg,#0d0d0d,#1a1a1a); }
-    #skills h2 { color: #00ffea; font-size: 2.5rem; margin-bottom: 40px; }
-    .skills-grid { display: grid; grid-template-columns: repeat(4, 150px); gap: 30px; justify-content: center; }
-    .skill-item { display: flex; flex-direction: column; align-items: center; transition: transform 0.3s, color 0.3s; color: #fff; cursor: pointer; }
-    .skill-item img { width: 60px; height: 60px; margin-bottom: 10px; }
-    .skill-item:hover { color: #00ffea; transform: scale(1.1); }
+
+/* Skills Section Heading */
+.skills-section {
+  padding: 60px 20px;
+  background-color: #111;
+  text-align: center;
+}
+
+.skills-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #00ffea;
+  margin-bottom: 40px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.skill-item img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease, drop-shadow 0.3s ease;
+}
+
+.skill-item:hover img {
+  transform: scale(1.2);
+  drop-shadow: 0 0 15px #00ffea, 0 0 25px #00ffea50; /* glow effect */
+}
+
+.skill-item span {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
 
     /* Contact Section */
     #contact { background: linear-gradient(135deg,#111111,#0d0d0d); }
@@ -58,22 +100,24 @@
 <body>
 
   <!-- Header -->
-  <header>
-    <h1>My Portfolio</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About Me</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1><a href="#home" style="color: #fff; text-decoration: none;">My Portfolio</a></h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
   <!-- Home -->
-  <section id="home" data-aos="fade-up">
-    <h1>Tushar Upadhyay</h1>
-    <h2>DevOps Enthusiast · Cloud Learner · Automation Explorer</h2>
-    <p>Building scalable, automated, and reliable cloud solutions.</p>
-  </section>
+<section id="home" data-aos="fade-up">
+  <h1 data-aos="fade-down" data-aos-duration="1500" data-aos-easing="ease-out-cubic" style="color: #fff; font-size: 4rem;">
+    Tushar Upadhyay
+  </h1>
+  <h2>DevOps Enthusiast · Cloud Learner · Automation Explorer</h2>
+  <p>Building scalable, automated, and reliable cloud solutions.</p>
+</section>
 
   <!-- About Me -->
   <section id="about" data-aos="fade-up">
@@ -81,9 +125,9 @@
     <p>Hello! I'm Tushar Upadhyay, a passionate DevOps engineer and cloud enthusiast. I specialize in automating infrastructure, deploying scalable cloud solutions, and optimizing workflows using modern DevOps tools like AWS, Terraform, Ansible, Docker, Jenkins, and Git. I'm constantly learning and exploring new technologies to deliver high-quality solutions and improve processes.</p>
   </section>
 
-  <!-- Skills -->
-<section id="skills" data-aos="fade-up">
-  <h2>Skills</h2>
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+  <h2 class="skills-heading">Skills</h2>
   <div class="skills-grid">
     <div class="skill-item">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
@@ -109,8 +153,17 @@
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
       <span>Git</span>
     </div>
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+      <span>Kubernetes</span>
+    </div>
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana">
+      <span>Grafana</span>
+    </div>
   </div>
 </section>
+
   <!-- Contact -->
   <section id="contact" data-aos="fade-up">
     <h2>Contact</h2>
