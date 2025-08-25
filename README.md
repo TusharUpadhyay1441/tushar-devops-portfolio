@@ -32,4 +32,4 @@ I love building solutions that improve **efficiency, reliability, and scalabilit
 
 ---
 
-⭐️ *Thanks for visiting my portfolio repo! Feel free to connect or check out my upcoming work.*
+⭐️ ***Thanks for visiting my portfolio repo! Feel free to connect or check out my upcoming work.***
