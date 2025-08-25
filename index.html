@@ -11,6 +11,31 @@
       background-color: #0d1117;
       color: #e6edf3;
       line-height: 1.6;
+      scroll-behavior: smooth; /* Smooth scroll */
+    }
+
+    /* Navigation Bar */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #111827;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    nav a {
+      color: #9ca3af;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
     }
 
     header {
@@ -30,6 +55,21 @@
       color: #9ca3af;
       margin-top: 10px;
       min-height: 1.5em;
+      white-space: pre;
+    }
+
+    .cursor {
+      display: inline-block;
+      background-color: #58a6ff;
+      width: 2px;
+      margin-left: 2px;
+      animation: blink 0.7s infinite;
+      vertical-align: bottom;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
     }
 
     section {
@@ -77,36 +117,24 @@
       width: 0;
       background: linear-gradient(90deg, #58a6ff, #1f6feb);
       border-radius: 20px;
-      animation: fillBar 2s forwards;
-    }
-
-    @keyframes fillBar {
-      from { width: 0; }
-      to { width: var(--skill-level); }
     }
 
     /* Contact section */
     #contact p {
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
+      margin: 10px 0;
       font-size: 1.1rem;
     }
 
-    #contact p i {
-      margin-right: 10px;
+    #contact a {
       color: #58a6ff;
-      font-size: 1.2rem;
-    }
-
-    #contact p a {
-      color: #e6edf3;
       text-decoration: none;
-      transition: color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    #contact p a:hover {
-      color: #58a6ff;
+    #contact a:hover {
+      color: #1f6feb;
     }
 
     /* Footer */
@@ -119,21 +147,45 @@
       border-top: 1px solid #1c1f26;
     }
 
+    footer .social-icons {
+      margin: 10px 0;
+    }
+
+    footer .social-icons a {
+      margin: 0 10px;
+      display: inline-block;
+      color: #9ca3af;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    footer .social-icons a:hover {
+      color: #58a6ff;
+      transform: scale(1.2);
+    }
+
+    footer i {
+      font-size: 1.5rem;
+    }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      h2 { font-size: 1.5rem; }
-    }
   </style>
-  <!-- Font Awesome CDN -->
+
+  <!-- Font Awesome -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <header>
     <h1>Tushar Upadhyay</h1>
     <p id="animated-text"></p>
@@ -151,81 +203,72 @@
     <h2>Skills</h2>
     <div class="skill">
       <div class="skill-name">Linux</div>
-      <div class="progress"><div class="progress-bar" style="--skill-level: 75%;"></div></div>
+      <div class="progress"><div class="progress-bar" data-level="75%"></div></div>
     </div>
     <div class="skill">
       <div class="skill-name">Docker</div>
-      <div class="progress"><div class="progress-bar" style="--skill-level: 80%;"></div></div>
+      <div class="progress"><div class="progress-bar" data-level="80%"></div></div>
     </div>
     <div class="skill">
       <div class="skill-name">Kubernetes</div>
-      <div class="progress"><div class="progress-bar" style="--skill-level: 70%;"></div></div>
+      <div class="progress"><div class="progress-bar" data-level="70%"></div></div>
     </div>
     <div class="skill">
       <div class="skill-name">AWS</div>
-      <div class="progress"><div class="progress-bar" style="--skill-level: 85%;"></div></div>
+      <div class="progress"><div class="progress-bar" data-level="85%"></div></div>
     </div>
     <div class="skill">
       <div class="skill-name">Jenkins</div>
-      <div class="progress"><div class="progress-bar" style="--skill-level: 75%;"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Terraform</div>
-      <div class="progress"><div class="progress-bar" style="--skill-level: 70%;"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Ansible</div>
-      <div class="progress"><div class="progress-bar" style="--skill-level: 65%;"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Grafana</div>
-      <div class="progress"><div class="progress-bar" style="--skill-level: 68%;"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">ELK Stack</div>
-      <div class="progress"><div class="progress-bar" style="--skill-level: 72%;"></div></div>
+      <div class="progress"><div class="progress-bar" data-level="75%"></div></div>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>
-      <i class="fas fa-envelope"></i>
-      <a href="mailto:tusharupadhyay1441@gmail.com">tusharupadhyay1441@gmail.com</a>
-    </p>
-    <p>
-      <i class="fab fa-github"></i>
-      <a href="https://github.com/tusharupadhyay1441" target="_blank">github.com/tusharupadhyay1441</a>
-    </p>
-    <p>
-      <i class="fab fa-linkedin"></i>
-      <a href="https://linkedin.com/in/your-linkedin" target="_blank">linkedin.com/in/your-linkedin</a>
-    </p>
+    <p><a href="mailto:tusharupadhyay1441@gmail.com"><i class="fas fa-envelope"></i> Email</a></p>
+    <p><a href="https://github.com/tusharupadhyay1441" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
+    <p><a href="https://linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
   </section>
 
   <footer>
+    <div class="social-icons">
+      <a href="https://github.com/tusharupadhyay1441" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:tusharupadhyay1441@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
     <p>© 2025 Tushar Upadhyay · DevOps Portfolio</p>
   </footer>
 
-  <!-- Typing animation -->
   <script>
-    const texts = ["DevOps Enthusiast", "Cloud Learner", "Automation Explorer"];
-    let count = 0;
+    // Typing animation with blinking cursor
+    const text = "DevOps Enthusiast · Cloud Learner · Automation Explorer";
+    const animatedText = document.getElementById("animated-text");
     let index = 0;
 
-    function typeText() {
-      const text = texts[count];
-      document.getElementById('animated-text').textContent = text.slice(0, index + 1);
-      index++;
-      if (index === text.length) {
-        count = (count + 1) % texts.length;
-        index = 0;
-        setTimeout(typeText, 1500);
-      } else {
-        setTimeout(typeText, 150);
+    const cursor = document.createElement("span");
+    cursor.classList.add("cursor");
+    animatedText.appendChild(cursor);
+
+    function type() {
+      if(index < text.length) {
+        animatedText.innerHTML = text.substring(0, index);
+        animatedText.appendChild(cursor);
+        index++;
+        setTimeout(type, 100);
       }
     }
-    typeText();
+    type();
+
+    // Skills bar animation sequentially
+    const bars = document.querySelectorAll('.progress-bar');
+
+    bars.forEach((bar, i) => {
+      setTimeout(() => {
+        bar.style.width = bar.getAttribute('data-level');
+        bar.style.transition = 'width 1.5s ease-in-out';
+      }, i * 500);
+    });
   </script>
+
 </body>
 </html>
