@@ -3,220 +3,186 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tushar | DevOps Portfolio</title>
+  <title>Tushar Upadhyay | DevOps Portfolio</title>
   <style>
-    /* Basic Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
     body {
-      background: #0f172a;
-      color: #f1f5f9;
+      background: linear-gradient(to right, #1e1e2f, #2b5876, #4e4376);
+      color: #fff;
+      line-height: 1.6;
       scroll-behavior: smooth;
     }
-
     header {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       text-align: center;
-      background: linear-gradient(135deg, #1e293b, #0f172a);
+      padding: 4rem 1rem;
+      background: rgba(0,0,0,0.3);
     }
-
     header h1 {
       font-size: 3rem;
-      animation: fadeInDown 2s ease forwards;
+      margin-bottom: 0.5rem;
+      animation: fadeInDown 1.5s ease;
     }
-
     header p {
-      margin-top: 15px;
       font-size: 1.2rem;
-      color: #94a3b8;
-      animation: fadeInUp 2s ease forwards;
+      animation: fadeInUp 2s ease;
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-50px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(50px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
     section {
-      padding: 60px 20px;
+      padding: 3rem 2rem;
       max-width: 900px;
       margin: auto;
     }
-
-    h2 {
+    section h2 {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 2rem;
       font-size: 2rem;
-      position: relative;
+      color: #ffcc70;
     }
 
-    h2::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: #38bdf8;
-      margin: 10px auto 0;
-      border-radius: 5px;
-    }
-
-    /* Skills Section */
-    .skill {
-      margin: 20px 0;
-    }
-
-    .skill-name {
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-
-    .progress {
-      background: #1e293b;
+    .about p {
+      font-size: 1.1rem;
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      padding: 1rem;
       border-radius: 10px;
-      overflow: hidden;
-      height: 20px;
+      animation: fadeIn 2s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
 
+    .skills .skill {
+      margin-bottom: 1.5rem;
+    }
+    .skills p {
+      margin-bottom: 0.5rem;
+    }
     .progress-bar {
-      height: 100%;
-      width: 0;
-      background: linear-gradient(90deg, #38bdf8, #06b6d4);
-      transition: width 2s ease;
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .progress {
+      height: 15px;
+      border-radius: 20px;
+      text-align: right;
+      padding-right: 5px;
+      line-height: 15px;
+      font-size: 0.8rem;
+      color: #fff;
+      animation: grow 2s ease-out;
+    }
+    @keyframes grow {
+      from {width: 0;}
     }
 
-    /* Contact Section */
     .contact {
       text-align: center;
     }
-
     .contact a {
       display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background: #38bdf8;
-      color: #0f172a;
+      margin: 0.5rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      background: #ffcc70;
+      color: #222;
       text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
+      font-weight: bold;
+      transition: 0.3s;
     }
-
     .contact a:hover {
-      background: #06b6d4;
+      background: #fff;
+      color: #222;
+      transform: scale(1.05);
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background: #1e293b;
-      color: #94a3b8;
-    }
-
-    /* Animations */
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      padding: 1rem;
+      background: rgba(0,0,0,0.3);
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <!-- Header Section -->
+
   <header>
-    <div>
-      <h1>Hi, I'm Tushar 👋</h1>
-      <p>Aspiring DevOps Engineer | Cloud & Automation Enthusiast</p>
-    </div>
+    <h1>Hi, I'm Tushar 👋</h1>
+    <p>A DevOps Enthusiast | Cloud Learner | Automation Explorer</p>
   </header>
 
-  <!-- About Section -->
-  <section id="about">
+  <section class="about">
     <h2>About Me</h2>
-    <p style="text-align:center; max-width:700px; margin:auto;">
-      I am a DevOps fresher passionate about Cloud Computing, Automation, and Monitoring. 
-      Skilled in AWS, Docker, Jenkins, Terraform, Ansible, Grafana, and ELK Stack. 
-      My goal is to build efficient, reliable, and scalable systems 🚀.
+    <p>
+      I’m a DevOps fresher with a background in Computer Applications.  
+      Currently learning AWS, Jenkins, Terraform, Ansible, Grafana, and ELK.  
+      My goal is to build scalable, automated, and reliable infrastructure 🚀.
     </p>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
+  <section class="skills">
     <h2>Skills</h2>
+
     <div class="skill">
-      <div class="skill-name">AWS Cloud</div>
-      <div class="progress"><div class="progress-bar" data-skill="80%"></div></div>
+      <p>Jenkins</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 70%; background:#f39c12;">70%</div>
+      </div>
     </div>
+
     <div class="skill">
-      <div class="skill-name">Docker & Kubernetes</div>
-      <div class="progress"><div class="progress-bar" data-skill="75%"></div></div>
+      <p>Terraform</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 65%; background:#27ae60;">65%</div>
+      </div>
     </div>
+
     <div class="skill">
-      <div class="skill-name">Jenkins</div>
-      <div class="progress"><div class="progress-bar" data-skill="70%"></div></div>
+      <p>Ansible</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 60%; background:#2980b9;">60%</div>
+      </div>
     </div>
+
     <div class="skill">
-      <div class="skill-name">Terraform</div>
-      <div class="progress"><div class="progress-bar" data-skill="65%"></div></div>
+      <p>Grafana</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 55%; background:#8e44ad;">55%</div>
+      </div>
     </div>
+
     <div class="skill">
-      <div class="skill-name">Ansible</div>
-      <div class="progress"><div class="progress-bar" data-skill="60%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Grafana & ELK Stack</div>
-      <div class="progress"><div class="progress-bar" data-skill="55%"></div></div>
+      <p>ELK Stack</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 50%; background:#c0392b;">50%</div>
+      </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact">
-      <a href="mailto:tushar@example.com">📧 Email</a>
-      <a href="https://github.com/tusharupadhyay1441" target="_blank">🐙 GitHub</a>
-      <a href="https://www.linkedin.com/in/tusharupadhyay" target="_blank">💼 LinkedIn</a>
-    </div>
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <a href="mailto:tushar@example.com">📧 Email</a>
+    <a href="https://github.com/tusharupadhyay1441" target="_blank">💻 GitHub</a>
+    <a href="https://www.linkedin.com/" target="_blank">🔗 LinkedIn</a>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>© 2025 Tushar Upadhyay | DevOps Portfolio</p>
+    <p>🚀 Automating today for a scalable tomorrow | © 2025 Tushar Upadhyay</p>
   </footer>
 
-  <script>
-    // Animate skill bars on scroll
-    const progressBars = document.querySelectorAll(".progress-bar");
-
-    function showProgress() {
-      progressBars.forEach(bar => {
-        const value = bar.getAttribute("data-skill");
-        bar.style.width = value;
-      });
-    }
-
-    function hideProgress() {
-      progressBars.forEach(bar => {
-        bar.style.width = "0";
-      });
-    }
-
-    window.addEventListener("scroll", () => {
-      const skillsSection = document.getElementById("skills");
-      const sectionPos = skillsSection.getBoundingClientRect().top;
-      const screenPos = window.innerHeight;
-
-      if(sectionPos < screenPos - 100) {
-        showProgress();
-      } else {
-        hideProgress();
-      }
-    });
-  </script>
 </body>
 </html>
