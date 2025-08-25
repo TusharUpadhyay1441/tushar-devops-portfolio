@@ -29,6 +29,7 @@
       font-size: 1.2rem;
       color: #9ca3af;
       margin-top: 10px;
+      min-height: 1.5em;
     }
 
     section {
@@ -86,7 +87,26 @@
 
     /* Contact section */
     #contact p {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+    }
+
+    #contact p i {
+      margin-right: 10px;
+      color: #58a6ff;
+      font-size: 1.2rem;
+    }
+
+    #contact p a {
+      color: #e6edf3;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    #contact p a:hover {
+      color: #58a6ff;
     }
 
     /* Footer */
@@ -97,26 +117,6 @@
       font-size: 0.9rem;
       color: #9ca3af;
       border-top: 1px solid #1c1f26;
-    }
-
-    footer .social-icons {
-      margin: 10px 0;
-    }
-
-    footer .social-icons a {
-      margin: 0 10px;
-      display: inline-block;
-      color: #9ca3af;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    footer .social-icons a:hover {
-      color: #58a6ff;
-      transform: scale(1.2);
-    }
-
-    footer i {
-      font-size: 1.5rem;
     }
 
     @keyframes fadeInUp {
@@ -130,7 +130,7 @@
 <body>
   <header>
     <h1>Tushar Upadhyay</h1>
-    <p>DevOps Enthusiast · Cloud Learner · Automation Explorer</p>
+    <p id="animated-text"></p>
   </header>
 
   <section id="about">
@@ -183,18 +183,47 @@
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:tusharupadhyay1441@gmail.com">tusharupadhyay1441@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/tusharupadhyay1441" target="_blank">github.com/tusharupadhyay1441</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/your-linkedin" target="_blank">linkedin.com/in/your-linkedin</a></p>
+    <p>
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:tusharupadhyay1441@gmail.com">tusharupadhyay1441@gmail.com</a>
+    </p>
+    <p>
+      <i class="fab fa-github"></i>
+      <a href="https://github.com/tusharupadhyay1441" target="_blank">github.com/tusharupadhyay1441</a>
+    </p>
+    <p>
+      <i class="fab fa-linkedin"></i>
+      <a href="https://linkedin.com/in/your-linkedin" target="_blank">linkedin.com/in/your-linkedin</a>
+    </p>
   </section>
 
   <footer>
-    <div class="social-icons">
-      <a href="https://github.com/tusharupadhyay1441" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:tusharupadhyay1441@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
     <p>© 2025 Tushar Upadhyay · DevOps Portfolio</p>
   </footer>
+
+  <!-- Typing animation script -->
+  <script>
+    const texts = ["DevOps Enthusiast", "Cloud Learner", "Automation Explorer"];
+    let count = 0;
+    let index = 0;
+    let currentText = '';
+    let letter = '';
+
+    (function type() {
+      if (count === texts.length) count = 0;
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+
+      document.getElementById('animated-text').textContent = letter;
+
+      if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 1500); // pause before typing next
+      } else {
+        setTimeout(type, 150);
+      }
+    })();
+  </script>
 </body>
 </html>
