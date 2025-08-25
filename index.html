@@ -3,171 +3,212 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tushar Upadhyay | DevOps Portfolio</title>
+  <title>Tushar Upadhyay | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Particles.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
   <style>
     /* ===== Base Styles ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; background-color: #0d0d0d; color: #fff; scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ===== Particles Background ===== */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: linear-gradient(135deg, #994ECC, #3E187A); /* purple gradient */
+    }
 
     /* ===== Header ===== */
-    header { position: fixed; top: 0; width: 100%; background-color: rgba(0,0,0,0.8); z-index: 100; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; }
-    header h1 { color: #00ffea; font-size: 1.8rem; font-weight: 700; }
-    nav a { color: #fff; margin-left: 20px; text-decoration: none; font-weight: 500; transition: 0.3s; }
-    nav a:hover { color: #00ffea; }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #00aaff;
+    }
 
     /* ===== Sections ===== */
-    section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 50px 20px; text-align: center; }
-    
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
     /* Home Section */
-    #home { background: linear-gradient(135deg,#0d0d0d,#111111); }
-   #home h1 {
-  font-size: 4rem;   /* bigger font size */
-  color: #ffffff;    /* white color */
-  margin-bottom: 10px;
-}
-    #home h2 { font-size: 2.8rem; color: #00ffea; margin-bottom: 20px; }
-    #home p { font-size: 1.3rem; color: #aaa; }
-    
+    #home h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+    }
+    #home h2 {
+      font-size: 2.8rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    #home p {
+      font-size: 1.3rem;
+      color: #ddd;
+    }
+
     /* About Section */
-    #about { background: linear-gradient(135deg,#111111,#1a1a1a); }
-    #about h2 { color: #00ffea; font-size: 2.5rem; margin-bottom: 20px; }
-    #about p { max-width: 700px; color: #ccc; line-height: 1.6; }
+    #about h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    #about p {
+      max-width: 700px;
+      color: #ddd;
+      line-height: 1.6;
+    }
 
-
-/* Skills Section Heading */
-.skills-section {
-  padding: 60px 20px;
-  background-color: #111;
-  text-align: center;
-}
-
-.skills-heading {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #00ffea;
-  margin-bottom: 40px;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  justify-items: center;
-  align-items: center;
-}
-
-.skill-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.skill-item img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease, drop-shadow 0.3s ease;
-}
-
-.skill-item:hover img {
-  transform: scale(1.2);
-  drop-shadow: 0 0 15px #00ffea, 0 0 25px #00ffea50; /* glow effect */
-}
-
-.skill-item span {
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-top: 10px;
-}
+    /* Skills Section */
+    .skills-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .skills-heading {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      justify-items: center;
+      align-items: center;
+    }
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .skill-item img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+    .skill-item:hover img {
+      transform: scale(1.2);
+    }
+    .skill-item span {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-top: 10px;
+    }
 
     /* Contact Section */
-    #contact { background: linear-gradient(135deg,#111111,#0d0d0d); }
-    #contact h2 { color: #00ffea; font-size: 2.5rem; margin-bottom: 20px; }
-    #contact p { color: #ccc; font-size: 1.2rem; }
+    #contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    #contact p {
+      color: #ddd;
+      font-size: 1.2rem;
+    }
 
     /* Footer */
-    footer { padding: 20px; text-align: center; background-color: #111; color: #888; }
-
-    /* Animations */
-    [data-aos] { opacity: 0; transition-property: transform, opacity; }
+    footer {
+      padding: 20px;
+      text-align: center;
+      color: #ccc;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
   </style>
 </head>
 <body>
 
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
   <!-- Header -->
-<header>
-  <h1><a href="#home" style="color: #fff; text-decoration: none;">My Portfolio</a></h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header>
+    <h1><a href="#home" style="color: #fff; text-decoration: none;">My Portfolio</a></h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <!-- Home -->
-<section id="home" data-aos="fade-up">
-  <h1 data-aos="fade-down" data-aos-duration="1500" data-aos-easing="ease-out-cubic" style="color: #fff; font-size: 4rem;">
-    Tushar Upadhyay
-  </h1>
-  <h2>DevOps Enthusiast · Cloud Learner · Automation Explorer</h2>
-  <p>Building scalable, automated, and reliable cloud solutions.</p>
-</section>
-
-  <!-- About Me -->
-  <section id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>Hello! I'm Tushar Upadhyay, a passionate DevOps engineer and cloud enthusiast. I specialize in automating infrastructure, deploying scalable cloud solutions, and optimizing workflows using modern DevOps tools like AWS, Terraform, Ansible, Docker, Jenkins, and Git. I'm constantly learning and exploring new technologies to deliver high-quality solutions and improve processes.</p>
+  <!-- Home Section -->
+  <section id="home">
+    <h1>Tushar Upadhyay</h1>
+    <h2>DevOps Enthusiast · Cloud Learner</h2>
+    <p>Building scalable, automated, and reliable cloud solutions.</p>
   </section>
 
-<!-- Skills Section -->
-<section id="skills" class="skills-section">
-  <h2 class="skills-heading">Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-item">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
-      <span>AWS</span>
-    </div>
-    <div class="skill-item">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform">
-      <span>Terraform</span>
-    </div>
-    <div class="skill-item">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible">
-      <span>Ansible</span>
-    </div>
-    <div class="skill-item">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-      <span>Docker</span>
-    </div>
-    <div class="skill-item">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins">
-      <span>Jenkins</span>
-    </div>
-    <div class="skill-item">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-      <span>Git</span>
-    </div>
-    <div class="skill-item">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
-      <span>Kubernetes</span>
-    </div>
-    <div class="skill-item">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana">
-      <span>Grafana</span>
-    </div>
-  </div>
-</section>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Tushar Upadhyay, a passionate DevOps engineer and cloud enthusiast. I specialize in automating infrastructure, deploying scalable cloud solutions, and optimizing workflows using modern DevOps tools. I'm constantly learning to deliver high-quality solutions.</p>
+  </section>
 
-  <!-- Contact -->
-  <section id="contact" data-aos="fade-up">
+  <!-- Skills Section -->
+  <section id="skills" class="skills-section">
+    <h2 class="skills-heading">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS"><span>AWS</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform"><span>Terraform</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible"><span>Ansible</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins"><span>Jenkins</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes"><span>Kubernetes</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana"><span>Grafana</span></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
     <h2>Contact</h2>
-    <p>You can reach me via email at <strong>tushar@example.com</strong>. Let's connect and build something amazing together!</p>
+    <p>You can reach me via email at <strong>tushar@example.com</strong>. Let's connect!</p>
   </section>
 
   <!-- Footer -->
@@ -175,15 +216,57 @@
     &copy; 2025 Tushar Upadhyay
   </footer>
 
-  <!-- AOS Animation Library -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- ===== Particles.js Config ===== -->
   <script>
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: false,
-      mirror: true
-    });
+    particlesJS('particles-js',
+      {
+        "particles": {
+          "number": {
+            "value": 80,
+            "density": { "enable": true, "value_area": 800 }
+          },
+          "color": { "value": "#fff" },
+          "shape": {
+            "type": "circle",
+            "stroke": { "width": 0, "color": "#000000" },
+            "polygon": { "nb_sides": 5 }
+          },
+          "opacity": { "value": 0.5, "random": false },
+          "size": { "value": 3, "random": true },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#fff",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 2,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out"
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": { "enable": true, "mode": "repulse" },
+            "onclick": { "enable": true, "mode": "push" },
+            "resize": true
+          },
+          "modes": {
+            "grab": { "distance": 400, "line_linked": { "opacity": 1 } },
+            "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
+            "repulse": { "distance": 100, "duration": 0.4 },
+            "push": { "particles_nb": 4 },
+            "remove": { "particles_nb": 2 }
+          }
+        },
+        "retina_detect": true
+      }
+    );
   </script>
 </body>
 </html>
