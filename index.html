@@ -123,8 +123,14 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+    }
   </style>
-  <!-- Font Awesome via CDN -->
+  <!-- Font Awesome CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -201,29 +207,25 @@
     <p>© 2025 Tushar Upadhyay · DevOps Portfolio</p>
   </footer>
 
-  <!-- Typing animation script -->
+  <!-- Typing animation -->
   <script>
     const texts = ["DevOps Enthusiast", "Cloud Learner", "Automation Explorer"];
     let count = 0;
     let index = 0;
-    let currentText = '';
-    let letter = '';
 
-    (function type() {
-      if (count === texts.length) count = 0;
-      currentText = texts[count];
-      letter = currentText.slice(0, ++index);
-
-      document.getElementById('animated-text').textContent = letter;
-
-      if (letter.length === currentText.length) {
-        count++;
+    function typeText() {
+      const text = texts[count];
+      document.getElementById('animated-text').textContent = text.slice(0, index + 1);
+      index++;
+      if (index === text.length) {
+        count = (count + 1) % texts.length;
         index = 0;
-        setTimeout(type, 1500); // pause before typing next
+        setTimeout(typeText, 1500);
       } else {
-        setTimeout(type, 150);
+        setTimeout(typeText, 150);
       }
-    })();
+    }
+    typeText();
   </script>
 </body>
 </html>
