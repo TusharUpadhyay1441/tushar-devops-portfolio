@@ -1,138 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" crossorigin="anonymous"></script>
+
+  <!-- AOS Animation -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {font-family: Arial, sans-serif; scroll-behavior: smooth; background: #f9f9f9; color: #333;}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; scroll-behavior: smooth; background: #f9f9f9; }
 
     header {
       position: fixed; top: 0; left: 0; width: 100%;
-      background: #0d47a1; color: white; padding: 15px 0;
+      background: rgba(0,0,50,0.85); padding: 15px 0;
       text-align: center; z-index: 1000;
     }
-    header nav a {
-      color: white; margin: 0 15px; text-decoration: none;
-      font-weight: bold; transition: 0.3s;
+    header a {
+      color: white; text-decoration: none;
+      margin: 0 15px; font-size: 18px;
+      transition: color 0.3s;
     }
-    header nav a:hover {color: #90caf9;}
+    header a:hover { color: #4db8ff; }
 
     section {
-      height: 100vh; display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      padding: 50px; text-align: center;
+      height: 100vh; display: flex;
+      align-items: center; justify-content: center;
+      flex-direction: column; text-align: center;
+      padding: 40px; color: white;
+      background-size: cover; background-position: center;
     }
 
-    #home {
-      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
-      color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
-    }
-    #home h1 {font-size: 3rem; margin-bottom: 20px;}
-    #home p {font-size: 1.5rem;}
+    #home { background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') no-repeat center/cover; }
+    #about { background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') no-repeat center/cover; }
+    #skills { background: url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f') no-repeat center/cover; }
+    #contact { background: url('https://images.unsplash.com/photo-1526378722484-bd91ca387e72') no-repeat center/cover; }
 
-    #about {
-      background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c') no-repeat center center/cover;
-      color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    }
-    #about h2 {font-size: 2.5rem; margin-bottom: 20px;}
-    #about p {max-width: 700px; margin: 10px auto; font-size: 1.2rem; line-height: 1.6;}
+    h1, h2 { margin-bottom: 20px; }
 
-    #skills {
-      background: #f4faff; color: #0d47a1;
-    }
-    #skills h2 {font-size: 2.5rem; margin-bottom: 30px;}
     .skills-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 30px; width: 80%; max-width: 1000px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 25px;
+      width: 80%;
+      max-width: 900px;
     }
-    .skill {
-      background: white; padding: 20px; border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    .skill-item {
+      background: rgba(255,255,255,0.1);
+      padding: 25px;
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .skill:hover {
+    .skill-item:hover {
       transform: scale(1.1);
-      box-shadow: 0 8px 20px rgba(13,71,161,0.4);
+      box-shadow: 0 0 20px rgba(0,255,255,0.6);
     }
-    .skill i {font-size: 2.5rem; margin-bottom: 10px; color: #0d47a1;}
-    .skill p {font-weight: bold;}
-
-    #contact {
-      background: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7') no-repeat center center/cover;
-      color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    .skill-item i {
+      font-size: 35px; margin-bottom: 10px; color: #4db8ff;
     }
-    #contact h2 {font-size: 2.5rem; margin-bottom: 20px;}
-    #contact p {margin: 10px 0; font-size: 1.2rem;}
-    #contact a {color: #90caf9; text-decoration: none; transition: 0.3s;}
-    #contact a:hover {color: white;}
 
     footer {
-      background: #0d47a1; color: white; text-align: center;
-      padding: 15px; font-size: 0.9rem;
+      background: rgba(0,0,50,0.9);
+      color: white; text-align: center;
+      padding: 15px 10px; font-size: 14px;
     }
+    .contact-links a {
+      display: block; color: white;
+      margin: 8px 0; font-size: 18px;
+      text-decoration: none; transition: color 0.3s;
+    }
+    .contact-links a:hover { color: #4db8ff; }
   </style>
 </head>
 <body>
+
   <header>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About Me</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact Me</a>
   </header>
 
+  <!-- Home -->
   <section id="home">
-    <h1 data-aos="fade-down">Hi, I'm Tushar</h1>
-    <p data-aos="fade-up">DevOps Enthusiast · Cloud Learner · Automation Explorer</p>
+    <h1 data-aos="fade-up">Hi, I'm Tushar</h1>
+    <h2 data-aos="fade-up" data-aos-delay="200">DevOps Enthusiast · Cloud Learner · Automation Explorer</h2>
   </section>
 
+  <!-- About -->
   <section id="about">
-    <h2 data-aos="fade-right">About Me</h2>
-    <p data-aos="fade-up">
-      I am a passionate tech learner, focused on Cloud Computing, DevOps practices, and Automation. 
-    </p>
-    <p data-aos="fade-up" data-aos-delay="200">
-      My journey began with curiosity in technology and problem-solving, and now I am building skills in AWS, CI/CD pipelines, 
-      and Infrastructure as Code.
-    </p>
-    <p data-aos="fade-up" data-aos-delay="400">
-      I enjoy creating projects, exploring open-source tools, and continuously improving my technical knowledge. 
+    <h1 data-aos="fade-right">About Me</h1>
+    <p data-aos="fade-up" style="max-width: 700px; font-size: 18px;">
+      I am a passionate DevOps and Cloud enthusiast with a background in computer applications.  
+      My focus is on building scalable, automated, and efficient systems.  
+      I enjoy learning and working with AWS, CI/CD pipelines, and Infrastructure as Code tools.  
+      With strong problem-solving skills, I aim to bridge the gap between development and operations.
     </p>
   </section>
 
+  <!-- Skills -->
   <section id="skills">
-    <h2 data-aos="zoom-in">Skills</h2>
+    <h1 data-aos="fade-down">Skills</h1>
     <div class="skills-grid">
-      <div class="skill" data-aos="zoom-in"><i class="fab fa-aws"></i><p>AWS</p></div>
-      <div class="skill" data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-docker"></i><p>Docker</p></div>
-      <div class="skill" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-kubernetes"></i><p>Kubernetes</p></div>
-      <div class="skill" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-cogs"></i><p>Jenkins</p></div>
-      <div class="skill" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-code-branch"></i><p>Git</p></div>
-      <div class="skill" data-aos="zoom-in" data-aos-delay="500"><i class="fab fa-github"></i><p>GitHub Actions</p></div>
-      <div class="skill" data-aos="zoom-in" data-aos-delay="600"><i class="fas fa-wrench"></i><p>Ansible</p></div>
-      <div class="skill" data-aos="zoom-in" data-aos-delay="700"><i class="fas fa-layer-group"></i><p>Terraform</p></div>
+      <div class="skill-item" data-aos="zoom-in"><i class="fab fa-aws"></i><p>AWS</p></div>
+      <div class="skill-item" data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-docker"></i><p>Docker</p></div>
+      <div class="skill-item" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-kubernetes"></i><p>Kubernetes</p></div>
+      <div class="skill-item" data-aos="zoom-in" data-aos-delay="300"><i class="fab fa-jenkins"></i><p>Jenkins</p></div>
+      <div class="skill-item" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-cogs"></i><p>Ansible</p></div>
+      <div class="skill-item" data-aos="zoom-in" data-aos-delay="500"><i class="fas fa-code-branch"></i><p>Terraform</p></div>
+      <div class="skill-item" data-aos="zoom-in" data-aos-delay="600"><i class="fab fa-git-alt"></i><p>Git</p></div>
+      <div class="skill-item" data-aos="zoom-in" data-aos-delay="700"><i class="fab fa-github"></i><p>GitHub Actions</p></div>
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact">
-    <h2 data-aos="fade-down">Contact Me</h2>
-    <p data-aos="fade-up"><i class="fas fa-envelope"></i> <a href="mailto:your@email.com">your@email.com</a></p>
-    <p data-aos="fade-up" data-aos-delay="200"><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></p>
-    <p data-aos="fade-up" data-aos-delay="400"><i class="fab fa-github"></i> <a href="https://github.com/yourgithub" target="_blank">GitHub</a></p>
+    <h1 data-aos="fade-up">Contact Me</h1>
+    <div class="contact-links" data-aos="fade-up" data-aos-delay="200">
+      <a href="mailto:yourmail@example.com"><i class="fas fa-envelope"></i> Email</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Tushar. All rights reserved.</p>
+    © 2025 Tushar | All Rights Reserved
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({duration: 1200, once: true});
+    AOS.init({ duration: 1000, once: true });
   </script>
 </body>
 </html>
