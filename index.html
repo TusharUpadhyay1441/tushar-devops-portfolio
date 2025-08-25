@@ -1,299 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tushar Upadhyay | DevOps Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tushar Upadhyay - DevOps Portfolio</title>
   <style>
-    :root {
-      --bg: #0f172a;
-      --panel: #1e293b;
-      --text: #e5e7eb;
-      --muted: #cbd5e1;
-      --brand1: #38bdf8;
-      --brand2: #0ea5e9;
-    }
-
-    /* Base */
-    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      background: var(--bg);
-      color: var(--text);
+      font-family: Arial, sans-serif;
+      background-color: #0d1117;
+      color: #e6edf3;
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Header */
     header {
       text-align: center;
-      padding: 96px 20px 72px;
-      background: linear-gradient(135deg, #0f172a 0%, #0b1221 40%, #0f172a 100%);
-      position: relative;
-      overflow: hidden;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #1f2937, #111827);
     }
+
     header h1 {
+      font-size: 2.5rem;
       margin: 0;
-      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
-      letter-spacing: 0.2px;
-      animation: fadeInUp 900ms ease both;
+      color: #58a6ff;
     }
-    header .subtitle {
+
+    header p {
+      font-size: 1.2rem;
+      color: #9ca3af;
       margin-top: 10px;
-      color: var(--muted);
-      font-weight: 400;
-      font-size: clamp(1rem, 1.8vw, 1.2rem);
-      animation: fadeInUp 1100ms ease both;
-      animation-delay: 120ms;
     }
 
-    /* Sections */
-    section { padding: 64px 20px; }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
     h2 {
-      text-align: center;
-      margin: 0 0 24px;
-      font-size: clamp(1.6rem, 3vw, 2rem);
-      color: var(--brand1);
+      font-size: 2rem;
+      color: #58a6ff;
+      border-bottom: 2px solid #58a6ff;
+      display: inline-block;
+      margin-bottom: 20px;
     }
 
-    /* About */
-    .about-card {
-      max-width: 860px;
-      margin: 0 auto;
-      background: color-mix(in oklab, var(--panel) 92%, transparent);
-      border: 1px solid rgba(148,163,184,0.12);
-      padding: 32px;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      color: var(--muted);
-      line-height: 1.85;
-      opacity: 0;
-      transform: translateY(26px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-    .about-card.visible {
-      opacity: 1;
-      transform: translateY(0);
+    /* About section */
+    #about p {
+      font-size: 1.1rem;
+      background: #1c1f26;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(88, 166, 255, 0.3);
+      animation: fadeInUp 1.5s ease-in-out;
     }
 
-    /* Skills */
-    .skills-wrap {
-      max-width: 860px;
-      margin: 0 auto;
-      display: grid;
-      gap: 18px;
-    }
+    /* Skills section */
     .skill {
-      background: rgba(30,41,59,0.65);
-      border: 1px solid rgba(148,163,184,0.12);
-      padding: 14px 16px;
-      border-radius: 12px;
+      margin: 15px 0;
     }
-    .skill-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      gap: 12px;
-    }
-    .skill-name { font-weight: 600; color: #f8fafc; }
-    .skill-pct { font-variant-numeric: tabular-nums; color: var(--muted); font-size: .95rem; }
 
-    .bar {
-      height: 12px;
-      width: 100%;
-      background: #0b1221;
-      border-radius: 999px;
+    .skill-name {
+      margin-bottom: 5px;
+    }
+
+    .progress {
+      background: #1c1f26;
+      border-radius: 20px;
       overflow: hidden;
-      border: 1px solid rgba(148,163,184,0.12);
+      height: 20px;
     }
-    .fill {
-      height: 100%;
-      width: 0;                      /* start collapsed */
-      background: linear-gradient(90deg, var(--brand1), var(--brand2));
-      border-radius: 999px;
-      transition: width 1400ms cubic-bezier(.22,.9,.24,1);
-    }
-    /* Staggered reveal for nicer feel */
-    .skill:nth-child(1) .fill { transition-delay: 60ms; }
-    .skill:nth-child(2) .fill { transition-delay: 140ms; }
-    .skill:nth-child(3) .fill { transition-delay: 220ms; }
-    .skill:nth-child(4) .fill { transition-delay: 300ms; }
-    .skill:nth-child(5) .fill { transition-delay: 380ms; }
-    .skill:nth-child(6) .fill { transition-delay: 460ms; }
-    .skill:nth-child(7) .fill { transition-delay: 540ms; }
-    .skill:nth-child(8) .fill { transition-delay: 620ms; }
 
-    /* Contact */
-    #contact p { text-align: center; color: var(--muted); margin: 6px 0 18px; }
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      max-width: 860px;
-      margin: 0 auto;
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #58a6ff, #1f6feb);
+      border-radius: 20px;
+      animation: fillBar 2s forwards;
     }
-    .contact-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--text);
-      padding: 12px 18px;
-      background: rgba(56,189,248,0.08);
-      border: 1px solid rgba(56,189,248,0.25);
-      border-radius: 12px;
-      font-weight: 600;
-      transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
+
+    @keyframes fillBar {
+      from { width: 0; }
+      to { width: var(--skill-level); }
     }
-    .contact-links a:hover {
-      transform: translateY(-2px);
-      background: rgba(56,189,248,0.18);
-      color: #eaf6ff;
-      border-color: rgba(56,189,248,0.5);
+
+    /* Contact section */
+    #contact p {
+      margin-bottom: 10px;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 28px 16px;
-      background: #0b1221;
-      color: #9aa6b2;
-      font-size: .95rem;
-      border-top: 1px solid rgba(148,163,184,0.12);
-      margin-top: 56px;
+      padding: 20px;
+      background: #111827;
+      font-size: 0.9rem;
+      color: #9ca3af;
+      border-top: 1px solid #1c1f26;
     }
 
-    /* Animations */
+    footer .social-icons {
+      margin: 10px 0;
+    }
+
+    footer .social-icons a {
+      margin: 0 10px;
+      display: inline-block;
+      color: #9ca3af;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    footer .social-icons a:hover {
+      color: #58a6ff;
+      transform: scale(1.2);
+    }
+
+    footer i {
+      font-size: 1.5rem;
+    }
+
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Respect reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; transition: none !important; }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
+  <!-- Font Awesome via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- HERO -->
   <header>
     <h1>Tushar Upadhyay</h1>
-    <div class="subtitle">DevOps Enthusiast · Cloud Learner · Automation Explorer</div>
+    <p>DevOps Enthusiast · Cloud Learner · Automation Explorer</p>
   </header>
 
-  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
-    <div class="about-card">
-      Hi, I’m <strong>Tushar</strong> 👋 — a DevOps fresher who loves automation, cloud computing and observability.
-      I work with tools like <strong>Jenkins, Docker, Kubernetes, Terraform, Ansible, Grafana</strong> and the
-      <strong>ELK</strong> stack to build efficient, reliable systems. I’m focused on learning fast, shipping value,
-      and keeping systems healthy and scalable. 🚀
-    </div>
+    <p>
+      Hi, I’m Tushar – a passionate DevOps fresher learning how to build, automate, and optimize modern cloud infrastructures.  
+      Currently exploring tools like Docker, Kubernetes, Jenkins, Ansible, and AWS to bridge the gap between development and operations.
+    </p>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills">
     <h2>Skills</h2>
-    <div class="skills-wrap">
-      <div class="skill">
-        <div class="skill-row">
-          <div class="skill-name">AWS</div><div class="skill-pct">85%</div>
-        </div>
-        <div class="bar"><div class="fill" data-level="85%"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-row">
-          <div class="skill-name">Docker</div><div class="skill-pct">80%</div>
-        </div>
-        <div class="bar"><div class="fill" data-level="80%"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-row">
-          <div class="skill-name">Kubernetes</div><div class="skill-pct">70%</div>
-        </div>
-        <div class="bar"><div class="fill" data-level="70%"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-row">
-          <div class="skill-name">Jenkins (CI/CD)</div><div class="skill-pct">80%</div>
-        </div>
-        <div class="bar"><div class="fill" data-level="80%"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-row">
-          <div class="skill-name">Terraform (IaC)</div><div class="skill-pct">75%</div>
-        </div>
-        <div class="bar"><div class="fill" data-level="75%"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-row">
-          <div class="skill-name">Ansible</div><div class="skill-pct">70%</div>
-        </div>
-        <div class="bar"><div class="fill" data-level="70%"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-row">
-          <div class="skill-name">Grafana</div><div class="skill-pct">85%</div>
-        </div>
-        <div class="bar"><div class="fill" data-level="85%"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-row">
-          <div class="skill-name">ELK Stack</div><div class="skill-pct">65%</div>
-        </div>
-        <div class="bar"><div class="fill" data-level="65%"></div></div>
-      </div>
+    <div class="skill">
+      <div class="skill-name">Linux</div>
+      <div class="progress"><div class="progress-bar" style="--skill-level: 75%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Docker</div>
+      <div class="progress"><div class="progress-bar" style="--skill-level: 80%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Kubernetes</div>
+      <div class="progress"><div class="progress-bar" style="--skill-level: 70%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">AWS</div>
+      <div class="progress"><div class="progress-bar" style="--skill-level: 85%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Jenkins</div>
+      <div class="progress"><div class="progress-bar" style="--skill-level: 75%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Terraform</div>
+      <div class="progress"><div class="progress-bar" style="--skill-level: 70%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Ansible</div>
+      <div class="progress"><div class="progress-bar" style="--skill-level: 65%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Grafana</div>
+      <div class="progress"><div class="progress-bar" style="--skill-level: 68%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">ELK Stack</div>
+      <div class="progress"><div class="progress-bar" style="--skill-level: 72%;"></div></div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Happy to connect for opportunities, collaborations, or feedback.</p>
-    <div class="contact-links">
-      <a href="mailto:tusharupadhyay@example.com">📧 Email</a>
-      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">🔗 LinkedIn</a>
-      <a href="https://github.com/tusharupadhyay1441" target="_blank" rel="noopener">🐙 GitHub</a>
-    </div>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:tusharupadhyay1441@gmail.com">tusharupadhyay1441@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/tusharupadhyay1441" target="_blank">github.com/tusharupadhyay1441</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/your-linkedin" target="_blank">linkedin.com/in/your-linkedin</a></p>
   </section>
 
-  <footer>© 2025 Tushar Upadhyay · DevOps Portfolio</footer>
-
-  <script>
-    // Intersection Observer to reveal About + animate skill bars when scrolled into view
-    const aboutCard = document.querySelector('.about-card');
-    const skillsSection = document.querySelector('#skills');
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-
-        // Reveal About card
-        if (entry.target === aboutCard) {
-          aboutCard.classList.add('visible');
-          io.unobserve(aboutCard);
-        }
-
-        // Animate skill bars
-        if (entry.target === skillsSection) {
-          document.querySelectorAll('.fill').forEach(bar => {
-            const target = bar.getAttribute('data-level');
-            // set width to target to animate
-            requestAnimationFrame(() => { bar.style.width = target; });
-          });
-          io.unobserve(skillsSection);
-        }
-      });
-    }, { threshold: 0.28 });
-
-    io.observe(aboutCard);
-    io.observe(skillsSection);
-  </script>
+  <footer>
+    <div class="social-icons">
+      <a href="https://github.com/tusharupadhyay1441" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:tusharupadhyay1441@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>© 2025 Tushar Upadhyay · DevOps Portfolio</p>
+  </footer>
 </body>
 </html>
