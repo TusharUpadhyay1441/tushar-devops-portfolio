@@ -3,96 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tushar Upadhyay | DevOps Fresher</title>
+  <title>Tushar | DevOps Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* Basic Reset */
+    * {
       margin: 0;
       padding: 0;
-      background: #f4f4f9;
-      color: #333;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
+
+    body {
+      background: #0f172a;
+      color: #f1f5f9;
+      scroll-behavior: smooth;
+    }
+
     header {
-      background: #2d3e50;
-      color: #fff;
-      padding: 20px 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
     }
+
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      animation: fadeInDown 2s ease forwards;
     }
+
     header p {
-      margin: 5px 0;
+      margin-top: 15px;
       font-size: 1.2rem;
+      color: #94a3b8;
+      animation: fadeInUp 2s ease forwards;
     }
+
     section {
-      padding: 40px;
+      padding: 60px 20px;
       max-width: 900px;
       margin: auto;
     }
+
     h2 {
-      color: #2d3e50;
-      margin-bottom: 10px;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      position: relative;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #38bdf8;
+      margin: 10px auto 0;
+      border-radius: 5px;
     }
-    li {
-      padding: 5px 0;
+
+    /* Skills Section */
+    .skill {
+      margin: 20px 0;
     }
+
+    .skill-name {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .progress {
+      background: #1e293b;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 20px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #38bdf8, #06b6d4);
+      transition: width 2s ease;
+    }
+
+    /* Contact Section */
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .contact a:hover {
+      background: #06b6d4;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
-      background: #2d3e50;
-      color: #fff;
-      margin-top: 40px;
+      background: #1e293b;
+      color: #94a3b8;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-
+  <!-- Header Section -->
   <header>
-    <h1>Tushar Upadhyay</h1>
-    <p>Aspiring DevOps Engineer | Cloud Enthusiast | Continuous Learner</p>
+    <div>
+      <h1>Hi, I'm Tushar 👋</h1>
+      <p>Aspiring DevOps Engineer | Cloud & Automation Enthusiast</p>
+    </div>
   </header>
 
-  <section>
+  <!-- About Section -->
+  <section id="about">
     <h2>About Me</h2>
-    <p>
-      Hi, I'm Tushar 👋, a DevOps fresher passionate about cloud computing, automation, 
-      and modern software deployment. I'm currently learning AWS, CI/CD pipelines, Docker, 
-      Kubernetes, and popular DevOps tools, and I love building solutions that improve efficiency.
+    <p style="text-align:center; max-width:700px; margin:auto;">
+      I am a DevOps fresher passionate about Cloud Computing, Automation, and Monitoring. 
+      Skilled in AWS, Docker, Jenkins, Terraform, Ansible, Grafana, and ELK Stack. 
+      My goal is to build efficient, reliable, and scalable systems 🚀.
     </p>
   </section>
 
-  <section>
+  <!-- Skills Section -->
+  <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>⚙️ Git, GitHub, Linux</li>
-      <li>☁️ AWS (EC2, S3, IAM, Lambda basics)</li>
-      <li>🐳 Docker & Containers</li>
-      <li>🚀 CI/CD with GitHub Actions & Jenkins</li>
-      <li>☸️ Kubernetes (basics)</li>
-      <li>📜 Bash & Python scripting</li>
-      <li>🛠️ Terraform & Ansible</li>
-      <li>📊 Grafana & ELK Stack</li>
-    </ul>
+    <div class="skill">
+      <div class="skill-name">AWS Cloud</div>
+      <div class="progress"><div class="progress-bar" data-skill="80%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Docker & Kubernetes</div>
+      <div class="progress"><div class="progress-bar" data-skill="75%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Jenkins</div>
+      <div class="progress"><div class="progress-bar" data-skill="70%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Terraform</div>
+      <div class="progress"><div class="progress-bar" data-skill="65%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Ansible</div>
+      <div class="progress"><div class="progress-bar" data-skill="60%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Grafana & ELK Stack</div>
+      <div class="progress"><div class="progress-bar" data-skill="55%"></div></div>
+    </div>
   </section>
 
-  <section>
+  <!-- Contact Section -->
+  <section id="contact">
     <h2>Contact</h2>
-    <p>
-      📧 Email: <a href="mailto:tusharupadhyay1441@gmail.com">tusharupadhyay1441@gmail.com</a><br>
-      💼 LinkedIn: <a href="https://www.linkedin.com/in/tushar-1b7091293/" target="_blank">https://www.linkedin.com/in/tushar-1b7091293</a><br>
-      🖥️ GitHub: <a href="https://github.com/tusharupadhyay1441" target="_blank">https://github.com/tusharupadhyay1441</a>
-    </p>
+    <div class="contact">
+      <a href="mailto:tushar@example.com">📧 Email</a>
+      <a href="https://github.com/tusharupadhyay1441" target="_blank">🐙 GitHub</a>
+      <a href="https://www.linkedin.com/in/tusharupadhyay" target="_blank">💼 LinkedIn</a>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 Tushar Upadhyay | DevOps Portfolio</p>
   </footer>
 
+  <script>
+    // Animate skill bars on scroll
+    const progressBars = document.querySelectorAll(".progress-bar");
+
+    function showProgress() {
+      progressBars.forEach(bar => {
+        const value = bar.getAttribute("data-skill");
+        bar.style.width = value;
+      });
+    }
+
+    function hideProgress() {
+      progressBars.forEach(bar => {
+        bar.style.width = "0";
+      });
+    }
+
+    window.addEventListener("scroll", () => {
+      const skillsSection = document.getElementById("skills");
+      const sectionPos = skillsSection.getBoundingClientRect().top;
+      const screenPos = window.innerHeight;
+
+      if(sectionPos < screenPos - 100) {
+        showProgress();
+      } else {
+        hideProgress();
+      }
+    });
+  </script>
 </body>
 </html>
