@@ -1,274 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tushar Upadhyay - DevOps Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0d1117;
-      color: #e6edf3;
-      line-height: 1.6;
-      scroll-behavior: smooth; /* Smooth scroll */
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tushar Upadhyay - DevOps Portfolio</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0d1117;
+    color: #e6edf3;
+    line-height: 1.6;
+    cursor: none; /* hide default cursor */
+  }
 
-    /* Navigation Bar */
-    nav {
-      position: sticky;
-      top: 0;
-      background-color: #111827;
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
+  /* Custom red dot cursor */
+  #cursor-dot {
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+  }
 
-    nav a {
-      color: #9ca3af;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+  header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #1f2937, #111827);
+  }
 
-    nav a:hover {
-      color: #58a6ff;
-    }
+  header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #58a6ff;
+  }
 
-    header {
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(135deg, #1f2937, #111827);
-    }
+  #animated-text {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    margin-top: 10px;
+    min-height: 1.5em;
+  }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-      color: #58a6ff;
-    }
+  nav {
+    position: sticky;
+    top: 0;
+    background: #111827;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    z-index: 1000;
+    border-bottom: 1px solid #1c1f26;
+  }
 
-    header p {
-      font-size: 1.2rem;
-      color: #9ca3af;
-      margin-top: 10px;
-      min-height: 1.5em;
-      white-space: pre;
-    }
+  nav button {
+    background: #1c1f26;
+    color: #e6edf3;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: 0.3s;
+  }
 
-    .cursor {
-      display: inline-block;
-      background-color: #58a6ff;
-      width: 2px;
-      margin-left: 2px;
-      animation: blink 0.7s infinite;
-      vertical-align: bottom;
-    }
+  nav button:hover {
+    background: #58a6ff;
+    color: #0d1117;
+  }
 
-    @keyframes blink {
-      0%, 50%, 100% { opacity: 1; }
-      25%, 75% { opacity: 0; }
-    }
+  section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    display: none;
+    animation: slideDown 0.8s forwards;
+  }
 
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 50px 20px;
-    }
+  h2 {
+    font-size: 2rem;
+    color: #58a6ff;
+    border-bottom: 2px solid #58a6ff;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
 
-    h2 {
-      font-size: 2rem;
-      color: #58a6ff;
-      border-bottom: 2px solid #58a6ff;
-      display: inline-block;
-      margin-bottom: 20px;
-    }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-    /* About section */
-    #about p {
-      font-size: 1.1rem;
-      background: #1c1f26;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(88, 166, 255, 0.3);
-      animation: fadeInUp 1.5s ease-in-out;
-    }
+  /* About section */
+  #about p {
+    font-size: 1.1rem;
+    background: #1c1f26;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(88, 166, 255, 0.3);
+  }
 
-    /* Skills section */
-    .skill {
-      margin: 15px 0;
-    }
+  /* Skills section */
+  .skill {
+    margin: 15px 0;
+  }
 
-    .skill-name {
-      margin-bottom: 5px;
-    }
+  .skill-name {
+    margin-bottom: 5px;
+  }
 
-    .progress {
-      background: #1c1f26;
-      border-radius: 20px;
-      overflow: hidden;
-      height: 20px;
-    }
+  .progress {
+    background: #1c1f26;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px;
+  }
 
-    .progress-bar {
-      height: 100%;
-      width: 0;
-      background: linear-gradient(90deg, #58a6ff, #1f6feb);
-      border-radius: 20px;
-    }
+  .progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #58a6ff, #1f6feb);
+    border-radius: 20px;
+  }
 
-    /* Contact section */
-    #contact p {
-      margin: 10px 0;
-      font-size: 1.1rem;
-    }
+  /* Contact section */
+  #contact .contact-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.1rem;
+  }
 
-    #contact a {
-      color: #58a6ff;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
+  #contact .contact-item a {
+    margin-left: 10px;
+    color: #58a6ff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
 
-    #contact a:hover {
-      color: #1f6feb;
-    }
+  #contact .contact-item a:hover {
+    text-decoration: underline;
+  }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111827;
-      font-size: 0.9rem;
-      color: #9ca3af;
-      border-top: 1px solid #1c1f26;
-    }
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #111827;
+    font-size: 0.9rem;
+    color: #9ca3af;
+    border-top: 1px solid #1c1f26;
+  }
 
-    footer .social-icons {
-      margin: 10px 0;
-    }
+  footer .social-icons {
+    margin: 10px 0;
+  }
 
-    footer .social-icons a {
-      margin: 0 10px;
-      display: inline-block;
-      color: #9ca3af;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
+  footer .social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+    color: #9ca3af;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
 
-    footer .social-icons a:hover {
-      color: #58a6ff;
-      transform: scale(1.2);
-    }
+  footer .social-icons a:hover {
+    color: #58a6ff;
+    transform: scale(1.2);
+  }
 
-    footer i {
-      font-size: 1.5rem;
-    }
+  footer i {
+    font-size: 1.5rem;
+  }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-
-  <!-- Font Awesome -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" crossorigin="anonymous"></script>
-
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="cursor-dot"></div>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<header>
+  <h1>Tushar Upadhyay</h1>
+  <div id="animated-text"></div>
+</header>
 
-  <header>
-    <h1>Tushar Upadhyay</h1>
-    <p id="animated-text"></p>
-  </header>
+<nav>
+  <button onclick="toggleSection('about')">About Me</button>
+  <button onclick="toggleSection('skills')">Skills</button>
+  <button onclick="toggleSection('contact')">Contact Me</button>
+</nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hi, I’m Tushar – a passionate DevOps fresher learning how to build, automate, and optimize modern cloud infrastructures.  
-      Currently exploring tools like Docker, Kubernetes, Jenkins, Ansible, and AWS to bridge the gap between development and operations.
-    </p>
-  </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Hi, I’m Tushar – a passionate DevOps fresher learning how to build, automate, and optimize modern cloud infrastructures.
+    Currently exploring tools like Docker, Kubernetes, Jenkins, Ansible, and AWS to bridge the gap between development and operations.
+  </p>
+</section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skill">
-      <div class="skill-name">Linux</div>
-      <div class="progress"><div class="progress-bar" data-level="75%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Docker</div>
-      <div class="progress"><div class="progress-bar" data-level="80%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Kubernetes</div>
-      <div class="progress"><div class="progress-bar" data-level="70%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">AWS</div>
-      <div class="progress"><div class="progress-bar" data-level="85%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Jenkins</div>
-      <div class="progress"><div class="progress-bar" data-level="75%"></div></div>
-    </div>
-  </section>
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skill">
+    <div class="skill-name">Linux</div>
+    <div class="progress"><div class="progress-bar" style="--level:75%"></div></div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">Docker</div>
+    <div class="progress"><div class="progress-bar" style="--level:80%"></div></div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">Kubernetes</div>
+    <div class="progress"><div class="progress-bar" style="--level:70%"></div></div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">AWS</div>
+    <div class="progress"><div class="progress-bar" style="--level:85%"></div></div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">Jenkins</div>
+    <div class="progress"><div class="progress-bar" style="--level:75%"></div></div>
+  </div>
+</section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p><a href="mailto:tusharupadhyay1441@gmail.com"><i class="fas fa-envelope"></i> Email</a></p>
-    <p><a href="https://github.com/tusharupadhyay1441" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
-    <p><a href="https://linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
-  </section>
+<section id="contact">
+  <h2>Contact Me</h2>
+  <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:tusharupadhyay1441@gmail.com">tusharupadhyay1441@gmail.com</a></div>
+  <div class="contact-item"><i class="fab fa-github"></i> <a href="https://github.com/tusharupadhyay1441" target="_blank">github.com/tusharupadhyay1441</a></div>
+  <div class="contact-item"><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/your-linkedin" target="_blank">linkedin.com/in/your-linkedin</a></div>
+</section>
 
-  <footer>
-    <div class="social-icons">
-      <a href="https://github.com/tusharupadhyay1441" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:tusharupadhyay1441@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-    <p>© 2025 Tushar Upadhyay · DevOps Portfolio</p>
-  </footer>
+<footer>
+  <div class="social-icons">
+    <a href="https://github.com/tusharupadhyay1441" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:tusharupadhyay1441@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+  <p>© 2025 Tushar Upadhyay · DevOps Portfolio</p>
+</footer>
 
-  <script>
-    // Typing animation with blinking cursor
-    const text = "DevOps Enthusiast · Cloud Learner · Automation Explorer";
-    const animatedText = document.getElementById("animated-text");
-    let index = 0;
-
-    const cursor = document.createElement("span");
-    cursor.classList.add("cursor");
-    animatedText.appendChild(cursor);
-
-    function type() {
-      if(index < text.length) {
-        animatedText.innerHTML = text.substring(0, index);
-        animatedText.appendChild(cursor);
-        index++;
-        setTimeout(type, 100);
-      }
+<script>
+  // Typing animation
+  const text = "DevOps Enthusiast · Cloud Learner · Automation Explorer";
+  let i = 0;
+  const speed = 100;
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById("animated-text").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
     }
-    type();
+  }
+  typeWriter();
 
-    // Skills bar animation sequentially
-    const bars = document.querySelectorAll('.progress-bar');
-
-    bars.forEach((bar, i) => {
-      setTimeout(() => {
-        bar.style.width = bar.getAttribute('data-level');
-        bar.style.transition = 'width 1.5s ease-in-out';
-      }, i * 500);
+  // Toggle sections
+  function toggleSection(id) {
+    const section = document.getElementById(id);
+    const allSections = document.querySelectorAll('section');
+    allSections.forEach(sec => {
+      if (sec.id !== id) sec.style.display = 'none';
     });
-  </script>
+    section.style.display = section.style.display === 'block' ? 'none' : 'block';
 
+    // Animate skill bars when skills section opens
+    if(id === 'skills' && section.style.display === 'block') {
+      const bars = document.querySelectorAll('.progress-bar');
+      bars.forEach(bar => {
+        bar.style.width = bar.style.getPropertyValue('--level');
+      });
+    }
+  }
+
+  // Custom cursor
+  const cursor = document.getElementById('cursor-dot');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+</script>
 </body>
 </html>
