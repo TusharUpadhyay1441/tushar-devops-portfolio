@@ -177,9 +177,47 @@
     .skill-item:hover img { transform: scale(1.2); }
     .skill-item span { color: #fff; font-size: 1.1rem; font-weight: 500; margin-top: 10px; }
 
-    /* Contact Section */
-    #contact h2 { font-size: 2.5rem; margin-bottom: 20px; }
-    #contact p  { color: #ddd; font-size: 1.2rem; }
+/* Contact Section */
+.contact {
+  text-align: center;
+  padding: 80px 20px;
+  color: white;  /* keep text white so it shows */
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-links a i {
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+.contact-links a:hover {
+  color: #c54b8c; /* highlight color on hover */
+}
+
 
     /* Footer */
     footer {
@@ -270,11 +308,29 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>You can reach me via email at <strong>tushar@example.com</strong>. Let's connect!</p>
-  </section>
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <p>Feel free to reach out through the platforms below:</p>
+
+  <div class="contact-links">
+    <!-- Gmail -->
+    <a href="mailto:yourmail@gmail.com" target="_blank">
+      <i class="fa-solid fa-envelope"></i> Gmail
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/your-profile" target="_blank">
+      <i class="fa-brands fa-linkedin"></i> LinkedIn
+    </a>
+
+    <!-- GitHub -->
+    <a href="https://github.com/your-username" target="_blank">
+      <i class="fa-brands fa-github"></i> GitHub
+    </a>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer>
