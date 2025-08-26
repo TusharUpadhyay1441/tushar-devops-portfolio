@@ -177,6 +177,12 @@
     .skill-item:hover img { transform: scale(1.2); }
     .skill-item span { color: #fff; font-size: 1.1rem; font-weight: 500; margin-top: 10px; }
 
+.project-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
 /* Contact Section */
 #contact {
   padding: 120px 20px; /* More spacing around the section */
@@ -311,6 +317,59 @@
     </div>
   </section>
 
+<section id="projects" style="padding:50px 0;">
+  <div class="container" style="max-width:1200px; margin:auto; text-align:center; margin-bottom:1px;">
+    <h2 style="font-size:3rem; color:#fff; margin-bottom:10px;">Projects</h2>
+    <p style="color:#ccc; font-size:1.2rem;">Some of my recent works</p>
+  </div>
+
+  <div class="container" style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+    
+    <!-- Project 1 -->
+    <div class="project-card" style="background:white; border-radius:15px; padding:30px; width:300px; color:#333; box-shadow:0 4px 15px rgba(0,0,0,0.2);">
+      <h3>CI/CD Automation</h3>
+      <p>Built upstream & downstream pipelines and automated deployments using Jenkins.</p>
+      <p><strong>Technologies:</strong> Jenkins, Git, Docker, AWS</p>
+      <a href="https://github.com/tusharupadhyay/project1" target="_blank" style="color:#994ECC; text-decoration:none; font-weight:bold;">View on GitHub</a>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card" style="background:white; border-radius:15px; padding:30px; width:300px; color:#333; box-shadow:0 4px 15px rgba(0,0,0,0.2);">
+      <h3>Cloud Deployment</h3>
+      <p>Deployed microservices to AWS using Terraform and Docker containers.</p>
+      <p><strong>Technologies:</strong> AWS, Terraform, Docker</p>
+      <a href="#" style="color:#994ECC; text-decoration:none; font-weight:bold;">View on GitHub</a>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card" style="background:white; border-radius:15px; padding:30px; width:300px; color:#333; box-shadow:0 4px 15px rgba(0,0,0,0.2);">
+      <h3>Monitoring & Alerts</h3>
+      <p>Implemented monitoring and alerting pipelines using Prometheus and Grafana.</p>
+      <p><strong>Technologies:</strong> Prometheus, Grafana, Docker</p>
+      <a href="#" style="color:#994ECC; text-decoration:none; font-weight:bold;">View on GitHub</a>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-card" style="background:white; border-radius:15px; padding:30px; width:300px; color:#333; box-shadow:0 4px 15px rgba(0,0,0,0.2);">
+      <h3>Automated Testing</h3>
+      <p>Setup automated testing pipelines for CI/CD using Selenium and Jenkins.</p>
+      <p><strong>Technologies:</strong> Selenium, Jenkins, Git</p>
+      <a href="#" style="color:#994ECC; text-decoration:none; font-weight:bold;">View on GitHub</a>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="project-card" style="background:white; border-radius:15px; padding:30px; width:300px; color:#333; box-shadow:0 4px 15px rgba(0,0,0,0.2);">
+      <h3>Container Orchestration</h3>
+      <p>Managed Docker containers using Kubernetes and automated deployments.</p>
+      <p><strong>Technologies:</strong> Kubernetes, Docker, Helm</p>
+      <a href="#" style="color:#994ECC; text-decoration:none; font-weight:bold;">View on GitHub</a>
+    </div>
+
+  </div>
+</section>
+
+
+
 <!-- Contact Section -->
 <section id="contact" class="contact">
   <h2>Contact Me</h2>
@@ -320,7 +379,7 @@
     <!-- LinkedIn -->
     <div class="contact-item">
       <h3>LinkedIn</h3>
-      <a href="https://www.linkedin.com/in/tushar-1b7091293" target="_blank">
+      <a href="https://www.linkedin.com/in/YOUR-USERNAME" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
              alt="LinkedIn" class="contact-img">
       </a>
@@ -329,7 +388,7 @@
     <!-- GitHub -->
     <div class="contact-item">
       <h3>GitHub</h3>
-      <a href="https://github.com/tusharupadhyay1441" target="_blank">
+      <a href="https://github.com/YOUR-USERNAME" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" 
              alt="GitHub" class="contact-img">
       </a>
@@ -338,7 +397,7 @@
     <!-- Gmail -->
     <div class="contact-item">
       <h3>Gmail</h3>
-      <a href="mailto:tusharupadhyay1441@gmail.com">
+      <a href="mailto:yourmail@gmail.com">
         <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" 
              alt="Gmail" class="contact-img">
       </a>
@@ -444,6 +503,29 @@
   }
 
   window.onload = typeWriter;
+</script>
+
+<!-- Swiper JS CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 </script>
 
 </body>
