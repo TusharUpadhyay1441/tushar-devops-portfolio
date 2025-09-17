@@ -28,7 +28,7 @@ I love building solutions that improve **efficiency, reliability, and scalabilit
 
 📧 **Email**: [tusharupadhyay1441@gmail.com]  
 💼 **LinkedIn**: [https://www.linkedin.com/in/tushar-1b7091293]
-🖥️ **GitHub**: [https://github.com/tusharupadhyay1441]
+🖥️ **Portfolio**: [https://tusharupadhyay1441.github.io/tushar-devops-portfolio/]
 
 ---
 
