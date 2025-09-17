@@ -164,6 +164,68 @@
   }
 }
 
+.cert-card {
+  display: inline-block;
+  background: #f5f5f5; /* same light background as About Me */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  max-width: 320px;
+  text-align: center;
+}
+
+.cert-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.cert-card h3 {
+  font-size: 20px;
+  color: #222; /* dark text, visible */
+  margin-bottom: 8px;
+}
+
+.cert-card p {
+  font-size: 14px;
+  color: #444; /* softer gray */
+  margin-bottom: 15px;
+}
+
+.cert-card .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0073e6;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cert-card .btn:hover {
+  background-color: #005bb5;
+}
+
+
+.resume-button {
+  margin-top: 20px;
+}
+
+.resume-button .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #0073e6;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.resume-button .btn:hover {
+  background-color: #005bb5;
+}
 
     /* Skills Section */
     .skills-section { padding: 60px 20px; text-align: center; }
@@ -317,11 +379,18 @@
   <i class="fas fa-shield-alt" title="Security"></i>
 </div>
 
-        Hello! I'm <span class="highlight">Tushar Upadhyay</span>, a passionate 
-        <strong>DevOps engineer</strong> and <strong>cloud enthusiast</strong>.  
-        I specialize in automating infrastructure, deploying scalable cloud 
-        solutions, and optimizing workflows using modern DevOps tools.  
-        Always eager to learn and deliver <span class="highlight">high-quality solutions</span>.
+        <p>
+        My name is Tushar Upadhyay, a dedicated 
+        DevOps Engineer skilled in 
+        cloud computing, CI/CD pipelines, automation, and container orchestration.  
+        I work with AWS, Docker, Kubernetes, Jenkins, Terraform, and Ansible 
+        to deliver scalable and secure solutions.
+      </p>
+      <div class="resume-button">
+  <a href="resume/Tushar_Upadhyay_Resume.pdf" download="Tushar_Upadhyay_Resume.pdf" class="btn">
+    Download Resume
+  </a>
+</div>
       </p>
     </div>
   </div>
@@ -343,96 +412,18 @@
     </div>
   </section>
 
-<!-- Expand Button -->
-<div style="text-align:center; margin-top: 0px;">
-  <button id="expandSkills" style="padding:10px 20px; font-size:16px; cursor:pointer; background:#994ECC; color:white; border:none; border-radius:5px;">Expand</button>
-</div>
 
-<!-- Skill Bars Container -->
-<div id="skillBarsContainer" style="display:none; text-align:center; margin-top:10px;">
-  
-  <!-- Skill 1 -->
-  <div style="margin:15px 0;">
-    <div style="color:white; margin-bottom:5px;">HTML</div>
-    <div class="skill-bar" style="width:300px; margin:0 auto; background:#ddd; border-radius:10px;">
-      <div class="skill-level" style="width:0%; height:20px; background:#994ECC; border-radius:10px;"></div>
+  <section id="certifications" class="certifications-section">
+  <div class="certifications-container">
+    <h2>Certifications</h2>
+    <div class="cert-card">
+      <img src="certificates/Edureka DevOps.jpg">
+      <h3>DevOps Certification</h3>
+      <p>Issued by Edureka</p>
+      <a href="certificates/Edureka DevOps.jpg" target="_blank" class="btn">View Certificate</a>
     </div>
   </div>
-
-  <!-- Skill 2 -->
-  <div style="margin:15px 0;">
-    <div style="color:white; margin-bottom:5px;">CSS</div>
-    <div class="skill-bar" style="width:300px; margin:0 auto; background:#ddd; border-radius:10px;">
-      <div class="skill-level" style="width:0%; height:20px; background:#994ECC; border-radius:10px;"></div>
-    </div>
-  </div>
-
-  <!-- Skill 3 -->
-  <div style="margin:15px 0;">
-    <div style="color:white; margin-bottom:5px;">JavaScript</div>
-    <div class="skill-bar" style="width:300px; margin:0 auto; background:#ddd; border-radius:10px;">
-      <div class="skill-level" style="width:0%; height:20px; background:#994ECC; border-radius:10px;"></div>
-    </div>
-  </div>
-
-  <!-- Skill 4 -->
-  <div style="margin:15px 0;">
-    <div style="color:white; margin-bottom:5px;">AWS</div>
-    <div class="skill-bar" style="width:300px; margin:0 auto; background:#ddd; border-radius:10px;">
-      <div class="skill-level" style="width:0%; height:20px; background:#994ECC; border-radius:10px;"></div>
-    </div>
-  </div>
-
-  <!-- Skill 5 -->
-  <div style="margin:15px 0;">
-    <div style="color:white; margin-bottom:5px;">Docker</div>
-    <div class="skill-bar" style="width:300px; margin:0 auto; background:#ddd; border-radius:10px;">
-      <div class="skill-level" style="width:0%; height:20px; background:#994ECC; border-radius:10px;"></div>
-    </div>
-  </div>
-
-  <!-- Skill 6 -->
-  <div style="margin:15px 0;">
-    <div style="color:white; margin-bottom:5px;">Terraform</div>
-    <div class="skill-bar" style="width:300px; margin:0 auto; background:#ddd; border-radius:10px;">
-      <div class="skill-level" style="width:0%; height:20px; background:#994ECC; border-radius:10px;"></div>
-    </div>
-  </div>
-
-  <!-- Skill 7 -->
-  <div style="margin:15px 0;">
-    <div style="color:white; margin-bottom:5px;">Kubernetes</div>
-    <div class="skill-bar" style="width:300px; margin:0 auto; background:#ddd; border-radius:10px;">
-      <div class="skill-level" style="width:0%; height:20px; background:#994ECC; border-radius:10px;"></div>
-    </div>
-  </div>
-
-  <!-- Skill 8 -->
-  <div style="margin:15px 0;">
-    <div style="color:white; margin-bottom:5px;">Git</div>
-    <div class="skill-bar" style="width:300px; margin:0 auto; background:#ddd; border-radius:10px;">
-      <div class="skill-level" style="width:0%; height:20px; background:#994ECC; border-radius:10px;"></div>
-    </div>
-  </div>
-
-</div>
-
-<!-- JS to animate bars -->
-<script>
-document.getElementById('expandSkills').addEventListener('click', function() {
-  const container = document.getElementById('skillBarsContainer');
-  container.style.display = 'block';
-  const bars = container.querySelectorAll('.skill-level');
-  const levels = [90, 85, 80, 75, 70, 65, 75, 80]; // Set your skill levels here
-  bars.forEach((bar, index) => {
-    let width = 0;
-    const interval = setInterval(() => {
-      if (width >= levels[index]) clearInterval(interval);
-      else bar.style.width = width++ + '%';
-    }, 10);
-  });
-});
-</script>
+</section>
 
 
 <section id="projects" style="padding:50px 0;">
