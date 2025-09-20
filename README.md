@@ -24,6 +24,30 @@ I love building solutions that improve **efficiency, reliability, and scalabilit
 
 ---
 
+## 🔹 Projects
+
+- 🐳 **Jenkins CI/CD with Ansible & Docker**  
+  Automated deployment of PHP web applications with Jenkins, Ansible, and Docker.  
+  [View on GitHub](https://github.com/TusharUpadhyay1441/jenkins-ansible-docker-php-cicd.git)
+
+- 🔨 **CI/CD Automation with Jenkins (Freestyle Jobs)**  
+  Upstream and downstream pipeline automation simulating real-world delivery pipelines.  
+  [View on GitHub](https://github.com/TusharUpadhyay1441/jenkins-freestyle-pipeline.git)
+
+- ⛏️ **CI/CD with Jenkins Declarative Pipeline**  
+  Automated compiling and packaging in a Jenkins declarative workflow.  
+  [View on GitHub](https://github.com/TusharUpadhyay1441/jenkins-declarative-pipeline.git)
+
+- 📊 **Grafana Monitoring & Alerting**  
+  Visualization and alerting on key metrics with Grafana and Prometheus dashboards.  
+  [View on GitHub](https://github.com/TusharUpadhyay1441/grafana-monitoring-dashboard.git)
+
+- ☁️ **Terraform VM Provisioning**  
+  Provisioned VMs using Terraform and Infrastructure as Code best practices.  
+  [View on GitHub](https://github.com/TusharUpadhyay1441/terraform-vm-provisioning.git)
+
+---
+
 ## 🔹 Contact
 
 📧 **Email**: [tusharupadhyay1441@gmail.com]  
