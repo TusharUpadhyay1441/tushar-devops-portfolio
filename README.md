@@ -1,17 +1,17 @@
-# 👋 Hi, I'm Tushar Upadhyay  
+# 👋 Hi, I am Tushar Upadhyay  
 
 **Aspiring DevOps Engineer | Cloud Enthusiast | Continuous Learner**  
 
 ---
 
 ## 🔹 About Me
-Hi, I'm Tushar 👋, a DevOps fresher passionate about **cloud computing, automation, and modern software deployment**.  
+Hi, I am Tushar 👋, a DevOps fresher passionate about **cloud computing, automation, and modern software deployment**.  
 I’m currently learning **AWS, CI/CD pipelines, Docker, Kubernetes, and DevOps tools** like Jenkins, Terraform, and Ansible.  
 I love building solutions that improve **efficiency, reliability, and scalability**.  
 
 ---
 
-## 🔹 Skills
+## 🔹 Skills :-
 
 - ⚙️ **Version Control**: Git, GitHub  
 - ☁️ **Cloud**: AWS (EC2, S3, IAM, Lambda basics)  
@@ -24,7 +24,7 @@ I love building solutions that improve **efficiency, reliability, and scalabilit
 
 ---
 
-## 🔹 Projects
+## 🔹 Projects :-
 
 - 🐳 **Jenkins CI/CD with Ansible & Docker**  
   Automated deployment of PHP web applications with Jenkins, Ansible, and Docker.  
@@ -48,7 +48,7 @@ I love building solutions that improve **efficiency, reliability, and scalabilit
 
 ---
 
-## 🔹 Contact
+## 🔹 Contact :-
 
 📧 **Email**: [tusharupadhyay1441@gmail.com]  
 💼 **LinkedIn**: [https://www.linkedin.com/in/tushar-1b7091293]<br>
