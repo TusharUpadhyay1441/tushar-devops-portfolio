@@ -4,22 +4,23 @@
 
 ---
 
-## 🔹 About Me
-Hi, I am Tushar 👋, a DevOps fresher passionate about **cloud computing, automation, and modern software deployment**.  
-I’m currently learning **AWS, CI/CD pipelines, Docker, Kubernetes, and DevOps tools** like Jenkins, Terraform, and Ansible.  
-I love building solutions that improve **efficiency, reliability, and scalability**.  
+## 🧭 About Me  
+
+DevOps enthusiast passionate about **cloud computing, scalability, and automation**.  
+Currently exploring **AWS, CI/CD, Docker, Kubernetes, Terraform, and Ansible** to streamline development workflows.  
+I enjoy deploying solutions that make systems **faster, more reliable, and easier to manage**.  
 
 ---
 
-## 🔹 Skills :-
+## 🛠️ Core Skills  
 
 - ⚙️ **Version Control**: Git, GitHub  
-- ☁️ **Cloud**: AWS (EC2, S3, IAM, Lambda basics)  
+- ☁️ **Cloud Platforms**: AWS (EC2, S3, IAM, Lambda Basics)  
 - 🐳 **Containers**: Docker  
-- 🚀 **CI/CD**: GitHub Actions, Jenkins  
-- ☸️ **Orchestration**: Kubernetes (basics)  
+- 🚀 **CI/CD Pipelines**: Jenkins, GitHub Actions  
+- ☸️ **Orchestration**: Kubernetes (Basics)  
 - 📜 **Scripting**: Bash, Python  
-- 🛠️ **Infrastructure as Code**: Terraform, Ansible  
+- 🏗️ **Infrastructure as Code**: Terraform, Ansible  
 - 📊 **Monitoring & Logging**: Grafana, ELK Stack  
 
 ---
