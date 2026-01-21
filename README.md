@@ -6,9 +6,11 @@
 
 ## 🧭 About Me  
 
-DevOps enthusiast passionate about **cloud computing, scalability, and automation**.  
-Currently exploring **AWS, CI/CD, Docker, Kubernetes, Terraform, and Ansible** to streamline development workflows.  
-I enjoy deploying solutions that make systems **faster, more reliable, and easier to manage**.  
+I am a DevOps enthusiast passionate about **cloud computing, automation, and scalable infrastructure**.  
+I am actively building hands-on experience with **AWS, CI/CD pipelines, containerization, and Infrastructure as Code**.
+
+My goal is to design and deploy systems that are **reliable, automated, secure, and easy to maintain**.  
+I strongly believe in learning by building real projects and continuously improving my technical foundation.  
 
 ---
 
