@@ -38,11 +38,11 @@ I strongly believe in learning by building real projects and continuously improv
   [View on GitHub](https://github.com/TusharUpadhyay1441/jenkins-freestyle-pipeline.git)
 
 - ⛏️ **CI/CD with Jenkins Declarative Pipeline**  
-  Automated compiling and packaging in a Jenkins declarative workflow
+  Automated compiling and packaging in a Jenkins declarative workflow.
   [View on GitHub](https://github.com/TusharUpadhyay1441/jenkins-declarative-pipeline.git)
 
 - 📊 **Grafana Monitoring & Alerting**  
-  Visualization and alerting on key metrics with Grafana and Prometheus dashboards
+  Visualization and alerting on key metrics with Grafana and Prometheus dashboards.
   [View on GitHub](https://github.com/TusharUpadhyay1441/grafana-monitoring-dashboard.git)
 
 - ☁️ **Terraform VM Provisioning**  
