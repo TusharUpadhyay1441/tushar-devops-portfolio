@@ -30,7 +30,7 @@ I strongly believe in learning by building real projects and continuously improv
 ## 🔹 Projects :-
 
 - 🐳 **Jenkins CI/CD with Ansible & Docker**  
-  Automated deployment of PHP web applications with Jenkins, Ansible, and Docker
+  Automated deployment of PHP web applications with Jenkins, Ansible, and Docker.
   [View on GitHub](https://github.com/TusharUpadhyay1441/jenkins-ansible-docker-php-cicd.git)
 
 - 🔨 **CI/CD Automation with Jenkins (Freestyle Jobs)**  
